@@ -1,0 +1,9 @@
+.nav-link{
+    font-weight: bolder;
+    font-size: larger;
+    color: #00686c;
+}
+
+.container-fluid{
+  border-bottom: 1px solid #a3c3b8;
+}
