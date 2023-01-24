@@ -1,7 +1,7 @@
-class persona{
-    nombre: string;
-    apellido: string;
-    edad: number;
+export class Persona{
+    private nombre: string;
+    private apellido: string;
+    private edad: number;
 
     constructor(nombre: string, apellido: string, edad: number){
         this.nombre = nombre;
@@ -10,7 +10,7 @@ class persona{
     }
 
     saludar(nombreASaludar: string){
-        return "Hola" + nombreASaludar + ", me llamo " + this.nombre;
+        return "Hola " + nombreASaludar + ", me llamo " + this.nombre;
     }
 
     setNombre(nombre: string): void{
