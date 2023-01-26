@@ -1,0 +1,21 @@
+.subtitulo{
+    font-size: 2em;
+    margin: 60px;
+}
+
+.borde-verde{
+    border: 2px solid green;
+    margin: 60px;
+}
+
+.borde-rojo{
+    border: 5px solid red;
+}
+
+.activo{
+    color: green;
+}
+
+.inactivo{
+    color: red;
+}

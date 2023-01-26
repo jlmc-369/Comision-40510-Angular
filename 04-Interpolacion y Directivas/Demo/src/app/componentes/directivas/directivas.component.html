@@ -1,0 +1,29 @@
+<h1>Clase de Interpolación y Directivas</h1>
+<h2>{{ subtitulo }}</h2>
+
+
+
+<h3>Directivas de atributos</h3>
+<p [style.border]="variable1 === 5 ? '1px solid blue' : '3px solid red'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit necessitatibus repudiandae molestias qui laudantium laborum odio aut doloremque debitis, animi quibusdam totam? Quasi officia sapiente alias autem voluptas est!</p>
+
+
+<h3></h3>
+<p [ngClass]="variable1 === 5 ? 'borde-verde' : 'borde-rojo'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit necessitatibus repudiandae molestias qui laudantium laborum odio aut doloremque debitis, animi quibusdam totam? Quasi officia sapiente alias autem voluptas est!</p>
+
+
+<hr> <hr>
+
+<h3>Directivas Estructurales</h3>
+
+<ul>
+    <li *ngFor="let estudiante of listaEstudiante" [ngClass]="estudiante.estaActivo ? 'activo' : 'inactivo'">
+        {{ estudiante.nombre }}
+        <button *ngIf="estudiante.estaActivo == false">Activar</button>
+    </li>
+</ul>
+
+<div [ngSwitch]="estudianteActual.nombre">
+    <div *ngSwitchCase="'Jose'">Jose esta en la plataforma</div>
+    <div *ngSwitchCase="'Luis'">Luis esta en la plataforma</div>
+    <div *ngSwitchDefault>Otro usuario está en la plataforma</div>
+</div>
