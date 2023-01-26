@@ -1,0 +1,24 @@
+<h2>{{ titulo }}</h2>
+
+<hr>
+
+<div class="contenedor">
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let estudiante of listaEstudiante" >
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.curso }}</td>
+            <td [ngClass]="estudiante.estaActivo ? 'activo' : 'inactivo'">{{ estudiante.estaActivo }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

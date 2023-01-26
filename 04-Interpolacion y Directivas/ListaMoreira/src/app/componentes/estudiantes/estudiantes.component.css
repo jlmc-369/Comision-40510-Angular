@@ -1,0 +1,11 @@
+.activo{
+    color: green;
+}
+
+.inactivo{
+    color: red;
+}
+
+.contenedor{
+    margin: 50px;
+}
