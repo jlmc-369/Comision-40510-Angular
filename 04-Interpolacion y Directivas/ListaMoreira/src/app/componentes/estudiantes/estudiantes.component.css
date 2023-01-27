@@ -4,8 +4,20 @@
 
 .inactivo{
     color: red;
+    animation: blinker 1s linear infinite;
 }
 
 .contenedor{
     margin: 50px;
 }
+
+
+.titulo{
+    margin: 50px;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

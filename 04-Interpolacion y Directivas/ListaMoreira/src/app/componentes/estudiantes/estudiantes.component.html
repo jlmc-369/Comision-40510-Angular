@@ -1,6 +1,8 @@
-<h2>{{ titulo }}</h2>
+<h2 class="titulo">
+<ul class="list-group">
+  <li class="list-group-item active" aria-current="true">{{ titulo }}</li>
+</ul></h2>
 
-<hr>
 
 <div class="contenedor">
     <table class="table">
@@ -17,7 +19,7 @@
             <td>{{ estudiante.nombre }}</td>
             <td>{{ estudiante.apellido }}</td>
             <td>{{ estudiante.curso }}</td>
-            <td [ngClass]="estudiante.estaActivo ? 'activo' : 'inactivo'">{{ estudiante.estaActivo }}</td>
+            <td [ngClass]="estudiante.estaActivo=='Activo' ? 'activo' : 'inactivo'" >{{ estudiante.estaActivo }}</td>    
           </tr>
         </tbody>
       </table>
