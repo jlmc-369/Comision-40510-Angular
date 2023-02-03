@@ -1,0 +1,82 @@
+<div class="text-bg-primary p-3">
+  <h3>
+    Formulario | Registro de Usuarios
+  </h3>
+</div>
+  <div>
+  <form [formGroup]="formularioIngresoEstudientes" (ngSubmit)="guardar()" class="row g-2 formularioRegistro">
+    <div class="col-md-6">
+      <label for="nombresApellidos" class="form-label">Primer Nombre y Primer Apellido</label>
+      <input formControlName="nombresApellidos" type="text" class="form-control" id="nombresApellidos">
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['nombresApellidos'].dirty && formularioIngresoEstudientes.controls['nombresApellidos'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['nombresApellidos'].dirty && formularioIngresoEstudientes.controls['nombresApellidos'].errors?.['required']">El campo no debe estar vacío</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['nombresApellidos'].dirty && formularioIngresoEstudientes.controls['nombresApellidos'].errors?.['pattern']">El campo debe de tener un Nombre y un Apellido con la 1ra letra mayuscula</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['nombresApellidos'].dirty && formularioIngresoEstudientes.controls['nombresApellidos'].errors?.['minlength']">El campo debe de tener minimo 8 caracteres</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="fechaDeNacimiento" class="form-label">Fecha de Nacimiento</label>
+      <input formControlName="fechaDeNacimiento" type="date" class="form-control" id="fechaDeNacimiento" >
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['fechaDeNacimiento'].valid">Información correcta</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="numeroDeCedula" class="form-label">Número de Cédula</label>
+      <input formControlName="numeroDeCedula" type="text" class="form-control" id="numeroDeCedula" >
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['numeroDeCedula'].dirty && formularioIngresoEstudientes.controls['numeroDeCedula'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeCedula'].dirty && formularioIngresoEstudientes.controls['numeroDeCedula'].errors?.['required']">El campo no debe estar vacío</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeCedula'].dirty && formularioIngresoEstudientes.controls['numeroDeCedula'].errors?.['pattern']">El campo debe contener solo números</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeCedula'].dirty && formularioIngresoEstudientes.controls['numeroDeCedula'].errors?.['minlength']">El campo debe de tener 10 caracteres</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeCedula'].dirty && formularioIngresoEstudientes.controls['numeroDeCedula'].errors?.['maxlength']">El campo debe de tener 10 caracteres</div>
+    </div>
+    
+    <div class="col-md-6">
+      <label for="paisCiudad" class="form-label">País / Ciudad</label>
+      <input formControlName="paisCiudad" type="text" class="form-control" id="paisCiudad" >
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['paisCiudad'].dirty && formularioIngresoEstudientes.controls['paisCiudad'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['paisCiudad'].dirty && formularioIngresoEstudientes.controls['paisCiudad'].errors?.['required']">El campo no debe estar vacío</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="numeroDeTelefono" class="form-label">Número de Teléfono</label>
+      <input formControlName="numeroDeTelefono" type="text" class="form-control" id="numeroDeTelefono" >
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['numeroDeTelefono'].dirty && formularioIngresoEstudientes.controls['numeroDeTelefono'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeTelefono'].dirty && formularioIngresoEstudientes.controls['numeroDeTelefono'].errors?.['required']">El campo no debe estar vacío</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeTelefono'].dirty && formularioIngresoEstudientes.controls['numeroDeTelefono'].errors?.['pattern']">El campo debe contener solo números</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['numeroDeTelefono'].dirty && formularioIngresoEstudientes.controls['numeroDeTelefono'].errors?.['minlength']">El campo debe de tener  minimo 8 caracteres</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="correoElectronico" class="form-label">Correo Electrónico</label>
+      <input formControlName="correoElectronico" type="text" class="form-control" id="correoElectronico" >
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['correoElectronico'].dirty && formularioIngresoEstudientes.controls['correoElectronico'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['correoElectronico'].dirty && formularioIngresoEstudientes.controls['correoElectronico'].errors?.['required']">El campo no debe estar vacío</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['correoElectronico'].dirty && formularioIngresoEstudientes.controls['correoElectronico'].errors?.['pattern']">El campo debe tener un formato de correo electrónico</div>      
+    </div>
+
+    <div class="col-md-6">
+      <label for="nicName" class="form-label">Nic Name</label>
+      <input formControlName="nicName" type="text" class="form-control" id="nicName" >
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['nicName'].dirty && formularioIngresoEstudientes.controls['nicName'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['nicName'].dirty && formularioIngresoEstudientes.controls['nicName'].errors?.['required']">El campo no debe estar vacío</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['nicName'].dirty && formularioIngresoEstudientes.controls['nicName'].errors?.['minlength']">El campo debe de tener  minimo 5 caracteres</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="contrasena" class="form-label">Contraseña</label>
+      <input formControlName="contrasena" type="password" class="form-control" id="contrasena">
+      <div class="valido" *ngIf="formularioIngresoEstudientes.controls['contrasena'].dirty && formularioIngresoEstudientes.controls['contrasena'].valid">Información correcta</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['contrasena'].dirty && formularioIngresoEstudientes.controls['contrasena'].errors?.['required']">El campo no debe estar vacío</div>
+      <div class="novalido" *ngIf="formularioIngresoEstudientes.controls['contrasena'].dirty && formularioIngresoEstudientes.controls['contrasena'].errors?.['minlength']">El campo debe de tener  minimo 5 caracteres</div>
+    </div>
+ 
+
+    <div class="col-md-6">
+      <button type="reset" class="btn btn-outline-dark">Limpiar Información</button> &nbsp;
+      <button type="submit" class="btn btn-primary" [disabled]="formularioIngresoEstudientes.invalid">Guardar</button>
+    </div>
+  </form>
+
+</div>
+
+
