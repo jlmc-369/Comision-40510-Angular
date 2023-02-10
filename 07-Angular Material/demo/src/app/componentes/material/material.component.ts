@@ -24,8 +24,8 @@ export class MaterialComponent {
   }
 
   abrirModal(curso: Curso){
-    // console.log('Abriendo el modal', curso);
-    const dialogRef = this.dialog.open(EditarCursoDialogComponent, {data:curso});
+    console.log('Abriendo el modal', curso);
+    // const dialogRef = this.dialog.open(EditarCursoDialogComponent, {data:curso});
   }
 
 }

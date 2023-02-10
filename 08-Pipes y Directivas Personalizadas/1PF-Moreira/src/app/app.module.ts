@@ -9,6 +9,8 @@ import { AbmAlumnosComponent } from './componentes/abm-alumnos/abm-alumnos.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modulos/material.module';
 import { ContenidoComponent } from './componentes/contenido/contenido.component';
+import { EditarAlumnoDialogoComponent } from './componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { ContenidoComponent } from './componentes/contenido/contenido.component'
     ToolbarComponent,
     ListaAlumnosComponent,
     AbmAlumnosComponent,
-    ContenidoComponent
+    ContenidoComponent,
+    EditarAlumnoDialogoComponent
   ],
   imports: [
     MaterialModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
