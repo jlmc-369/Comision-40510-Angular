@@ -15,7 +15,10 @@ export class EditarAlumnoDialogoComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ){
     this.formulario = new FormGroup({
-      nombre: new FormControl(data.nombre)
+      nombre: new FormControl(data.nombre),
+      apellido: new FormControl(data.apellido),
+      edad: new FormControl(data.edad),
+      curso: new FormControl(data.curso)
     })
   }
 }

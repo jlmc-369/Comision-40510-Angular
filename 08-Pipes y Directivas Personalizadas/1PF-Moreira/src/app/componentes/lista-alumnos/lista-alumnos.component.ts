@@ -23,8 +23,8 @@ export class ListaAlumnosComponent {
 
   }
 
-  abrirModal(alumnos123: Alumnos){
-    // const dialogRef = this.dialog.open(EditarAlumnoDialogoComponent, {data:alumnos});
-    console.log('Abriendo el modal', alumnos123);
+  abrirModal(alumnos: Alumnos){
+    const dialogRef = this.dialog.open(EditarAlumnoDialogoComponent, {data:alumnos});
+    console.log('Abriendo el modal', alumnos);
   }
 }
