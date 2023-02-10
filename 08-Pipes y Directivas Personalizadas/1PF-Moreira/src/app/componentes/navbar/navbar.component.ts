@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  deshabilitado() {
+  if(confirm("La opción aún no está configurada.")) {
+    
+  }
+}
+
 }

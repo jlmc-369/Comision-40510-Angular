@@ -11,6 +11,8 @@ import { MaterialModule } from './modulos/material.module';
 import { ContenidoComponent } from './componentes/contenido/contenido.component';
 import { EditarAlumnoDialogoComponent } from './componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogElementsExampleDialogComponent } from './componentes/dialog-elements-example-dialog/dialog-elements-example-dialog.component';
+import { PersonalizarTextoDirective } from './directivas/personalizar-texto.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaAlumnosComponent,
     AbmAlumnosComponent,
     ContenidoComponent,
-    EditarAlumnoDialogoComponent
+    EditarAlumnoDialogoComponent,
+    DialogElementsExampleDialogComponent,
+    PersonalizarTextoDirective
   ],
   imports: [
     MaterialModule,
