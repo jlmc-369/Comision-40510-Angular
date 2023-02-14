@@ -21,4 +21,16 @@ export class EditarAlumnoDialogoComponent {
       curso: new FormControl(data.curso)
     })
   }
+
+  cerrarVentana(){
+    this.dialogRef.close({
+      mode: 'cerrar', ...this.data
+    });
+  }
+
+  actualizarUsuario(){
+    ///console.log('actualizar');
+    this.dialogRef.close({...this.data})
+    
+  }
 }

@@ -1,1 +1,31 @@
-<p>abm-alumnos works!</p>
+<h4 appPersonalizarTexto>Ingresar un nuevo estudiante</h4>
+
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" name="" class="form-control" #nombre placeholder="Nombre">
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-success" (click)="crearAlumno(nombre)">Crear Alumno</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let nombre of alumnos">
+                <td>
+                   {{nombre}}
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
