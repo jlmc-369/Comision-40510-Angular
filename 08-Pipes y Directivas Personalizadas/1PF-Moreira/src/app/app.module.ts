@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modulos/material.module';
 import { ContenidoComponent } from './componentes/contenido/contenido.component';
 import { EditarAlumnoDialogoComponent } from './componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogElementsExampleDialogComponent } from './componentes/dialog-elements-example-dialog/dialog-elements-example-dialog.component';
 import { PersonalizarTextoDirective } from './directivas/personalizar-texto.directive';
 
@@ -30,7 +30,8 @@ import { PersonalizarTextoDirective } from './directivas/personalizar-texto.dire
     MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

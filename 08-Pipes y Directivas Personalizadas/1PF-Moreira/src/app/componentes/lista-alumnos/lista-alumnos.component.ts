@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Alumnos } from '../../modelos/alumnos';
@@ -10,6 +10,8 @@ import { EditarAlumnoDialogoComponent } from '../editar-alumno-dialogo/editar-al
   styleUrls: ['./lista-alumnos.component.css']
 })
 export class ListaAlumnosComponent {
+  @Input() alumnoNuevo! : Alumnos[];
+  @Output() imprimirEstudianteLista: EventEmitter<Alumnos> = new EventEmitter<Alumnos>();   
   Alumnos: Alumnos[] = [
     {nombre: 'Karina', apellido: 'Delgado', edad: 21, curso: 'Quinto'},
     {nombre: 'Luis', apellido: 'Cedeño', edad: 27, curso: 'Segundo'},
@@ -31,6 +33,14 @@ export class ListaAlumnosComponent {
     dialogRef.afterClosed().subscribe(result => console.log('recivido desde la tabla', result)
     )
   }
+
+  agregarAlumno(alumno: Alumnos){
+    this.Alumnos.push(alumno);
+  }
+  // agregarAlumno(alumno: Alumnos){
+  //   this.alumnoNuevo.push(alumno);
+  //   console.log("la que debe de ingresara", alumno);
+  // }
   
 
   eliminar(alumnos: Alumnos){

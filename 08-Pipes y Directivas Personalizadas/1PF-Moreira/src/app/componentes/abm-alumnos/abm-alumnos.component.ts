@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Alumnos } from '../../modelos/alumnos';
 import { ListaAlumnosComponent } from '../lista-alumnos/lista-alumnos.component';
@@ -9,17 +9,27 @@ import { ListaAlumnosComponent } from '../lista-alumnos/lista-alumnos.component'
   styleUrls: ['./abm-alumnos.component.css']
 })
 export class AbmAlumnosComponent {
-  constructor(){
+  @Input() alumnoNuevo! : Alumnos[];
+  @Output() imprimirEstudianteABM: EventEmitter<Alumnos> = new EventEmitter<Alumnos>();   
+  nombre!: string;
+  apellido!: string;
+  edad!: number;
+  curso!: string;
 
+  crearAlumno()
+  {
+    let alumno: Alumnos = {
+      nombre: this.nombre,
+      apellido: this.apellido,
+      edad: this.edad,
+      curso: this.curso
+    };
+    console.log("NOMBRE: de estudiante nuvo", alumno);
+    this.imprimirEstudianteABM.emit(alumno);
   }
 
-  alumnos=[];
-  
-  crearAlumno(nombre: { value: any; })
-  {
-    ///this.alumnos.push({nombre: nombre.value, alumnos[]})
-    //crearAlumno.push({nombre:nombre});
-    let asd = nombre.value;
-    console.log("NOMBRE: "+asd);
+  agregarAlumno(alumno: Alumnos){
+    this.alumnoNuevo.push(alumno);
+    console.log("la que debe de ingresara", alumno);
   }
 }

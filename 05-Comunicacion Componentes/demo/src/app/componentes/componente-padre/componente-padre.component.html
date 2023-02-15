@@ -1,6 +1,6 @@
 <div class="clase-padre">
     <h4>Este es un mensaje desde el componente padre</h4>
-    <pre>
-        {{estudiantesPadre | json}}
-    </pre>
+    <app-componente-hijo [estudiantesHijo]="estudiantesPadre" (eventoSalidaEstudiante)="actualizarEstudiantePadre($event)"></app-componente-hijo>
+
+    <h4 #mensaje>Mvensaje de prueba para @ViewChild</h4>
 </div>

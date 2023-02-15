@@ -1,15 +1,17 @@
 <h4 appPersonalizarTexto>Ingresar un nuevo estudiante</h4>
-
-<br>
-<div class="row">
-    <div class="col-md-3">
-        <input type="text" name="" class="form-control" #nombre placeholder="Nombre">
-    </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-success" (click)="crearAlumno(nombre)">Crear Alumno</button>
-    </div>
+<div class="col-md-10">
+    <input type="text" class="form-control" [(ngModel)]="nombre" placeholder="Nombre">
+    <input type="text" class="form-control" [(ngModel)]="apellido" placeholder="Apellido">
+    <input type="text" class="form-control" [(ngModel)]="edad" placeholder="Edad">
+    <input type="text" class="form-control" [(ngModel)]="curso" placeholder="Curso">
+    <button type="button" class="btn btn-success" (click)="crearAlumno()">Crear Alumno</button>
 </div>
-<div class="row">
+
+
+
+<!-- <app-lista-alumnos  [alumnoNuevo]="alumnoNuevo" (imprimirEstudianteLista)="agregarAlumno($event)" class="listaAlumnos"></app-lista-alumnos> -->
+
+<!-- <div class="row">
     <div class="col-md-10">
         <table class="table">
             <thead class="thead-dark">
@@ -28,4 +30,4 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->
