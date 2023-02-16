@@ -13,13 +13,14 @@ export class ListaAlumnosComponent {
   @Input() alumnoNuevo! : Alumnos[];
   @Output() imprimirEstudianteLista: EventEmitter<Alumnos> = new EventEmitter<Alumnos>();   
   Alumnos: Alumnos[] = [
-    {nombre: 'Karina', apellido: 'Delgado', edad: 21, curso: 'Quinto'},
-    {nombre: 'Luis', apellido: 'Cedeño', edad: 27, curso: 'Segundo'},
-    {nombre: 'José', apellido: 'Moreira', edad: 24, curso: 'Quinto'},
-    {nombre: 'Maribel', apellido: 'Chávez', edad: 29, curso: 'Tercero'},
+    {idAl: 0, nombre: 'Karina', apellido: 'Delgado', edad: 21, curso: 'Quinto'},
+    {idAl: 1, nombre: 'Luis', apellido: 'Cedeño', edad: 27, curso: 'Segundo'},
+    {idAl: 2, nombre: 'José', apellido: 'Moreira', edad: 24, curso: 'Quinto'},
+    {idAl: 3, nombre: 'Maribel', apellido: 'Chávez', edad: 29, curso: 'Tercero'},
   ];
   dataSource: MatTableDataSource<Alumnos> = new MatTableDataSource<Alumnos>(this.Alumnos);
-  columnas: string[] = ['nombre', 'apellido', 'edad', 'curso', 'opciones'];
+  columnas: string[] = ['idAl', 'nombre', 'apellido', 'edad', 'curso', 'opciones'];
+  
   static Alumnos: any;
 
   constructor(private dialog: MatDialog){
@@ -30,8 +31,14 @@ export class ListaAlumnosComponent {
     const dialogRef = this.dialog.open(EditarAlumnoDialogoComponent, {data:alumnos});
     console.log('Abriendo el modal', alumnos);
 
-    dialogRef.afterClosed().subscribe(result => console.log('recivido desde la tabla', result)
-    )
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('recivido desde la tabla', result);
+      const data = this.dataSource.data;
+      data.push(result);
+      this.dataSource.data = this.Alumnos;
+      //this.dataSource.data.push(result);
+      ///this.Alumnos.push(result);
+    })
   }
 
   agregarAlumno(alumno: Alumnos){
@@ -43,14 +50,21 @@ export class ListaAlumnosComponent {
   // }
   
 
-  eliminar(alumnos: Alumnos){
-    ///console.log(...this.Alumnos);
-    ///this.Alumnos.splice(this.Alumnos.length -1);
-    ///let asd = this.Alumnos.splice(1);
-    let asd = this.Alumnos;
-    console.log(asd);
-    this.Alumnos = this.Alumnos.filter(item => item !== alumnos);
-}
+  // eliminar(alumnos: Alumnos){
+  //   ///console.log(...this.Alumnos);
+  //   ///this.Alumnos.splice(this.Alumnos.length -1);
+  //   ///let asd = this.Alumnos.splice(1);
+  //   let asd = this.Alumnos;
+  //   console.log(asd);
+  //   this.Alumnos = this.Alumnos.filter(item => item !== alumnos);
+  // }
+
+  eliminar(id:number): void {
+    console.log("EL ID ES:  ", id);
+    this.dataSource.data = this.dataSource.data.filter((x) => x.idAl !== id);
+    this.dataSource._updateChangeSubscription();    
+  }
+
 }
 
 // removeItem(obj){

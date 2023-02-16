@@ -29,8 +29,8 @@ export class EditarAlumnoDialogoComponent {
   }
 
   actualizarUsuario(){
-    ///console.log('actualizar');
-    this.dialogRef.close({...this.data})
+    console.log('actualizar', this.formulario.value);
+    this.dialogRef.close(this.formulario.value)
     
   }
 }

@@ -1,6 +1,15 @@
 <h4 appPersonalizarTexto>Lista de estudiantes activos en el curso de Angular</h4>
 
 <table mat-table [dataSource]="dataSource" class="table table-striped table-bordered border-primary" >
+
+    <ng-container matColumnDef="idAl">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Num. </th>
+        <!-- <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td> -->
+        <!-- <td mat-cell *matCellDef="let element"> {{dataSource.filteredData.indexOf(element)}} </td> -->
+        <td mat-cell *matCellDef="let element"> {{element.idAl}} </td>
+      </ng-container>
+
+
     <!-- Columna del nombre -->
     <ng-container matColumnDef="nombre">
         <th mat-header-cell *matHeaderCellDef>Nombre</th>
@@ -32,13 +41,14 @@
             <button mat-icon-button color="primary" (click)="abrirModal(element)">
                 <mat-icon >edit</mat-icon>
             </button>
-            <button mat-icon-button color="warn" (click)="eliminar(element)">
+            <button mat-icon-button color="warn" (click)="eliminar(element.idAl)">
                 <mat-icon>delete</mat-icon>
-            </button>
+            </button>            
         </td>
     </ng-container>
     
     <tr mat-header-row *matHeaderRowDef="columnas"></tr>
     <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+Copy
     
 </table>

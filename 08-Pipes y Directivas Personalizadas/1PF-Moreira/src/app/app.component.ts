@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Alumnos } from './modelos/alumnos';
 import { ListaAlumnosComponent } from './componentes/lista-alumnos/lista-alumnos.component';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
   ///Alumnos: any;
 
   agregarAlumno(alumno: Alumnos){
-    console.log("AAAAA",alumno);
-    ///ListaAlumnosComponent.Alumnos:Alumnos.push(alumno);    
+    console.log("ALUMNO NUEVO desde root",alumno);
+    ListaAlumnosComponent.Alumnos.push(alumno);
+    //let dataSource = new MatTableDataSource<Alumnos>(this.alumnos)    
   }
 }
