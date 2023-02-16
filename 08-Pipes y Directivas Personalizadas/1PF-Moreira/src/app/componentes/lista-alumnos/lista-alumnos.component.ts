@@ -29,21 +29,60 @@ export class ListaAlumnosComponent {
 
   abrirModal(alumnos: Alumnos){
     const dialogRef = this.dialog.open(EditarAlumnoDialogoComponent, {data:alumnos});
-    console.log('Abriendo el modal', alumnos);
+    ///console.log('Abriendo el modal', alumnos);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('recivido desde la tabla', result);
+      // console.log('recivido desde la tabla', result);
+      // console.log('POS - 0', result[0]);
+      // console.log('POS - 1', result[1]);
+
+      switch(result[1]) {
+        case 1:   ///Ingresa un nuevo Alumno
+          console.log('POS - 0', result[0]);
+          console.log('POS - 1', result[1]);
+          this.dataSource.data.push(result[0]);
+          this.dataSource._updateChangeSubscription();
+          ///this.dataSource.data = this.Alumnos;
+          break;
+        case 2: ///Edita al Alumno
+          console.log('POS - 0', result[0]);
+          console.log('POS - 1', result[1]);
+          console.log("EL ID ES:  ", result[2]);
+          if (result) {
+            const index = this.dataSource.data.findIndex((x) => x.idAl === result[2]);
+            this.dataSource.data[index] = result[0];
+            this.dataSource._updateChangeSubscription();
+          }
+          break;
+        case 3: ///Elimina al Alumno
+          console.log('POS - 0', result[0]);
+          console.log('POS - 1', result[1]);
+          console.log("EL ID ES:  ", result[2]);
+          this.dataSource.data = this.dataSource.data.filter((x) => x.idAl !== result[2]);
+          ///this.dataSource._updateChangeSubscription();  
+          break;
+        default: ///cierra
+          console.log('POS - 0', result[0]);
+          console.log('POS - 1', result[1]);
+      } 
+
+
       const data = this.dataSource.data;
-      data.push(result);
-      this.dataSource.data = this.Alumnos;
+      //data.push(result);
+      //this.dataSource.data.push(result);
+      //this.dataSource.data = this.Alumnos;
+
+
+
+
       //this.dataSource.data.push(result);
       ///this.Alumnos.push(result);
     })
   }
 
-  agregarAlumno(alumno: Alumnos){
-    this.Alumnos.push(alumno);
-  }
+  // agregarAlumno(alumno: Alumnos){
+  //   this.Alumnos.push(alumno);
+  // }
   // agregarAlumno(alumno: Alumnos){
   //   this.alumnoNuevo.push(alumno);
   //   console.log("la que debe de ingresara", alumno);
@@ -59,11 +98,11 @@ export class ListaAlumnosComponent {
   //   this.Alumnos = this.Alumnos.filter(item => item !== alumnos);
   // }
 
-  eliminar(id:number): void {
-    console.log("EL ID ES:  ", id);
-    this.dataSource.data = this.dataSource.data.filter((x) => x.idAl !== id);
-    this.dataSource._updateChangeSubscription();    
-  }
+  // eliminar(id:number): void {
+  //   console.log("EL ID ES:  ", id);
+  //   this.dataSource.data = this.dataSource.data.filter((x) => x.idAl !== id);
+  //   this.dataSource._updateChangeSubscription();    
+  // }
 
 }
 

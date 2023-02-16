@@ -8,10 +8,8 @@ import { ListaAlumnosComponent } from './componentes/lista-alumnos/lista-alumnos
 import { AbmAlumnosComponent } from './componentes/abm-alumnos/abm-alumnos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modulos/material.module';
-import { ContenidoComponent } from './componentes/contenido/contenido.component';
 import { EditarAlumnoDialogoComponent } from './componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DialogElementsExampleDialogComponent } from './componentes/dialog-elements-example-dialog/dialog-elements-example-dialog.component';
 import { PersonalizarTextoDirective } from './directivas/personalizar-texto.directive';
 
 @NgModule({
@@ -21,9 +19,7 @@ import { PersonalizarTextoDirective } from './directivas/personalizar-texto.dire
     ToolbarComponent,
     ListaAlumnosComponent,
     AbmAlumnosComponent,
-    ContenidoComponent,
     EditarAlumnoDialogoComponent,
-    DialogElementsExampleDialogComponent,
     PersonalizarTextoDirective
   ],
   imports: [

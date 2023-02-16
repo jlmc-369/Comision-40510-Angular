@@ -15,6 +15,7 @@ export class EditarAlumnoDialogoComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ){
     this.formulario = new FormGroup({
+      idAl: new FormControl(data.idAl),
       nombre: new FormControl(data.nombre),
       apellido: new FormControl(data.apellido),
       edad: new FormControl(data.edad),
@@ -22,15 +23,33 @@ export class EditarAlumnoDialogoComponent {
     })
   }
 
-  cerrarVentana(){
-    this.dialogRef.close({
-      mode: 'cerrar', ...this.data
-    });
+  agregarAlumno(){
+    //console.log("AGREGAR",1,this.formulario.value );
+    const var1 = [this.formulario.value, 1]; 
+    this.dialogRef.close(var1)
   }
 
-  actualizarUsuario(){
-    console.log('actualizar', this.formulario.value);
-    this.dialogRef.close(this.formulario.value)
-    
+  actualizarAlumno(){
+    //console.log('actualizar',2, this.formulario.value);
+    const var1 = [this.formulario.value, 2, this.data.idAl]; 
+    this.dialogRef.close(var1)
   }
-}
+
+  eliminarAlumno() {
+    //console.log("ELIMINAR",3 ,this.formulario.value);
+    const var1 = [this.formulario.value, 3, this.data.idAl]; 
+    this.dialogRef.close(var1)
+  }
+  cerrarVentana(){
+    //console.log('cerrar',4, this.formulario.value);
+    const var1 = [this.formulario.value, 4]; 
+    this.dialogRef.close(var1)
+    };
+  }  
+  // cerrarVentana(){
+  //   this.dialogRef.close({
+  //     mode: 'cerrar', ...this.data
+  //   });
+  // }
+
+
