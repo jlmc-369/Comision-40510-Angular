@@ -11,7 +11,7 @@ export class CiudadService {
       poblacion: 217553, 
       superficie: '60 km2',
       fechaCantonizacion: new Date(1963,3,2),
-      foto: 'https://i0.wp.com/manta.gob.ec/wp-content/uploads/2021/11/258866177_198423449131389_6389523541889313741_n-2.jpg?fit=960%2C540&ssl=1',
+      foto: 'https://www.clave.com.ec/wp-content/uploads/2022/08/SkyscraperCity.jpg',
       provincia: {
         nombre: 'Manabi',
         codigoProvincial: 13,
@@ -23,7 +23,7 @@ export class CiudadService {
       poblacion: 315531, 
       superficie: '98 km2',
       fechaCantonizacion: new Date(1933,4,8),
-      foto: 'https://ame.gob.ec/wp-content/uploads/2017/01/PORTOVIEJO.jpg',
+      foto: 'https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/SYM35JYEY5EC7KL54IABNIUG2M.jpg',
       provincia: {
         nombre: 'Manabi',
         codigoProvincial: 13,

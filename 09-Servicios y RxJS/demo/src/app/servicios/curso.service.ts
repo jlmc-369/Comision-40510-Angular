@@ -61,4 +61,8 @@ export class CursoService {
   obtenerCursos(): Array<Curso>{
     return this.cursos;
   }
+
+  eliminarCurso(comision: string){
+    
+  }
 }
