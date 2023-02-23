@@ -58,7 +58,18 @@ export class CiudadService {
 
   constructor() { }
 
-  obtenerCiudades(): Array<Ciudad>{
-    return this.ciudades;
+  // obtenerCiudades(): Array<Ciudad>{
+  //   return this.ciudades;
+  // }
+  obtenerCiudadesPromise(): Promise<Ciudad[]>{
+    return new Promise((resolve, reject) => {
+      if(this.ciudades.length > 0){
+        resolve(this.ciudades);
+      }else{
+        reject({
+          descripcion: "No existen ciudades ingresadas."
+        });
+      }
+    });
   }
 }

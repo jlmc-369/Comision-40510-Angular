@@ -19,7 +19,13 @@ export class ListaCiudadesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ciudades = this.CiudadService.obtenerCiudades();  
+    
+    // this.ciudades = this.CiudadService.obtenerCiudades();  
+    this.CiudadService.obtenerCiudadesPromise().then((ciudades: Ciudad[]) => {
+      this.ciudades = ciudades;
+    }).catch((error: any) => {
+      console.log("Error en cargar Ciudades", error);
+    })
   }
 
 }

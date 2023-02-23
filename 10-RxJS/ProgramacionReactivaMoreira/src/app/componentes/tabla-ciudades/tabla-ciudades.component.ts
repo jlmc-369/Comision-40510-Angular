@@ -19,7 +19,7 @@ export class TablaCiudadesComponent {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<Ciudad>(this.CiudadService.obtenerCiudades());
+    //this.dataSource = new MatTableDataSource<Ciudad>(this.CiudadService.obtenerCiudades());
   }
 
 }
