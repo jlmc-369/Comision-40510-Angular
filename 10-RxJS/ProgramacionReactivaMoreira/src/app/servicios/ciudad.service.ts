@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { observable, Observable } from 'rxjs';
 import { Ciudad } from '../modelos/ciudad';
 
 @Injectable({
@@ -56,7 +57,13 @@ export class CiudadService {
     }
   ];
 
-  constructor() { }
+  private ciudad$!: Observable<Ciudad[]>;
+
+  constructor() {
+    this.ciudad$ = new Observable<Ciudad[]>((suscriptor) => {
+      suscriptor.next(this.ciudades);
+    });
+  }
 
   // obtenerCiudades(): Array<Ciudad>{
   //   return this.ciudades;
@@ -72,4 +79,9 @@ export class CiudadService {
       }
     });
   }
+
+  obtenerCiudadesObservable(): Observable<Ciudad[]>{
+    return this.ciudad$;
+  }
+
 }
