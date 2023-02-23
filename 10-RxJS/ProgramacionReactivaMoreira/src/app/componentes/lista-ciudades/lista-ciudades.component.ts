@@ -18,19 +18,23 @@ export class ListaCiudadesComponent  {
     private CiudadService: CiudadService
   ){
 
-    of(this.ciudades).pipe(
-      map((ciudades: Ciudad[]) => {
-        return ciudades.filter((ciudad: Ciudad) => ciudad.nombre == 'Manta')
-      })
-    ).subscribe((ciudad)=>{
-      console.log("Obtenido desde el OF, filtrado por nombre", ciudad);
-    });
+    // of(this.ciudades).pipe(
+    //   map((ciudades: Ciudad[]) => {
+    //     return ciudades.filter((ciudad: Ciudad) => ciudad.nombre == 'Manta')
+    //   })
+    // ).subscribe((ciudad)=>{
+    //   console.log("Obtenido desde el OF, filtrado por nombre", ciudad);
+    // });
+
 
 
    }
 
   ngOnInit(): void {
-    this.ciudades$ = this.CiudadService.obtenerCiudadesObservable();
+    let lista = this.ciudades$;
+    console.log("lista:",this.ciudades$ = this.CiudadService.obtenerCiudadesObservable());
+    
+    ///this.ciudades$ = this.CiudadService.obtenerCiudadesObservable();
   }
 
 
