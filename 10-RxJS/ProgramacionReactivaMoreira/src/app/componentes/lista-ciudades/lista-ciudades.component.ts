@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, filter, from, interval, map, mergeMap, of } from 'rxjs';
 import { Ciudad } from 'src/app/modelos/ciudad';
 import { CiudadService } from '../../servicios/ciudad.service';
 
@@ -10,30 +10,27 @@ import { CiudadService } from '../../servicios/ciudad.service';
   templateUrl: './lista-ciudades.component.html',
   styleUrls: ['./lista-ciudades.component.css']
 })
-export class ListaCiudadesComponent implements OnInit {
+export class ListaCiudadesComponent  {
   ciudades!: Ciudad[];
   ciudades$!: Observable<Ciudad[]>;
 
   constructor(
     private CiudadService: CiudadService
   ){
-    ///console.log("datos de desde LISTACIUDADES", CiudadService.obtenerCiudades());
-  }
+
+    of(this.ciudades).pipe(
+      map((ciudades: Ciudad[]) => {
+        return ciudades.filter((ciudad: Ciudad) => ciudad.nombre == 'Manta')
+      })
+    ).subscribe((ciudad)=>{
+      console.log("Obtenido desde el OF, filtrado por nombre", ciudad);
+    });
+
+
+   }
 
   ngOnInit(): void {
-    // this.ciudades = this.CiudadService.obtenerCiudades();
-
     this.ciudades$ = this.CiudadService.obtenerCiudadesObservable();
-    this.ciudades$.subscribe((ciudades: Ciudad[]) => {
-    this.ciudades = ciudades;
-    })
-    // this.CiudadService.obtenerCiudadesPromise().then((ciudades: Ciudad[]) => {
-    // this.ciudades = ciudades;
-    // }).catch((error: any) => {
-    //   console.log("Error en cargar Ciudades", error);
-    // })
-  
-  
   }
 
 
