@@ -33,7 +33,7 @@ export class ListaCiudadesComponent  {
    }
 
   ngOnInit(): void {
-    // this.ciudades$ = this.CiudadService.obtenerCiudadesObservable();
+ this.ciudades$ = this.ciudadService.obtenerCiudadesObservable();
 
     // from(this.ciudades).pipe(
     //   filter((ciudad: Ciudad) => ciudad.nombre === 'Manta')
