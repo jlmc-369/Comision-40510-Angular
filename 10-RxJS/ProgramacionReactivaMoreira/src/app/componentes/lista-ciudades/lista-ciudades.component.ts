@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, filter, from, interval, map, mergeMap, of } from 'rxjs';
+import { Observable, filter, from, interval, map, mergeMap, of, pipe } from 'rxjs';
 import { Ciudad } from 'src/app/modelos/ciudad';
 import { CiudadService } from '../../servicios/ciudad.service';
 
@@ -15,22 +15,30 @@ export class ListaCiudadesComponent  {
   ciudades$!: Observable<Ciudad[]>;
 
   constructor(
-    private CiudadService: CiudadService
+    private ciudadService: CiudadService
   ){
 
-    of(this.ciudades).pipe(
-      map((ciudades: Ciudad[]) => {
-        return ciudades.filter((ciudad: Ciudad) => ciudad.nombre == 'Manta')
-      })
-    ).subscribe((ciudad)=>{
-      console.log("Obtenido desde el OF, filtrado por nombre", ciudad);
-    });
+    console.log("datos de desde TABLACIUDADES", ciudadService.obtenerCiudades());
 
+      from(ciudadService.obtenerCiudades()).pipe(
+      filter((ciudad: Ciudad) => ciudad.nombre != 'Ambato')
+    ).subscribe((ciudad: Ciudad) => console.log("FILTRO----:",ciudad))
+    
+
+    
+    // from(this.ciudades).pipe(
+    //   filter((ciudad: Ciudad) => ciudad.nombre === 'Manta')
+    // ).subscribe((ciudad: Ciudad) => console.log("FILTRO----:",ciudad))
 
    }
 
   ngOnInit(): void {
-    this.ciudades$ = this.CiudadService.obtenerCiudadesObservable();
+    // this.ciudades$ = this.CiudadService.obtenerCiudadesObservable();
+
+    // from(this.ciudades).pipe(
+    //   filter((ciudad: Ciudad) => ciudad.nombre === 'Manta')
+    // ).subscribe((ciudad: Ciudad) => console.log("FILTRO----:",ciudad))
+    
   }
 
 
