@@ -10,34 +10,36 @@ import { CiudadService } from '../../servicios/ciudad.service';
   templateUrl: './lista-ciudades.component.html',
   styleUrls: ['./lista-ciudades.component.css']
 })
-export class ListaCiudadesComponent  {
+export class ListaCiudadesComponent implements OnInit {
   ciudades!: Ciudad[];
   ciudades$!: Observable<Ciudad[]>;
+  ciudad2: any;
 
   constructor(
     private ciudadService: CiudadService
   ){
-
-    console.log("datos de desde TABLACIUDADES", ciudadService.obtenerCiudades());
-
-      from(ciudadService.obtenerCiudades()).pipe(
-      filter((ciudad: Ciudad) => ciudad.nombre != 'Ambato')
-    ).subscribe((ciudad: Ciudad) => console.log("FILTRO----:",ciudad))
-    
-
-    
-    // from(this.ciudades).pipe(
-    //   filter((ciudad: Ciudad) => ciudad.nombre === 'Manta')
-    // ).subscribe((ciudad: Ciudad) => console.log("FILTRO----:",ciudad))
+    // console.log("datos de desde TABLACIUDADES", ciudadService.obtenerCiudades());
 
    }
 
   ngOnInit(): void {
- this.ciudades$ = this.ciudadService.obtenerCiudadesObservable();
+    
+    const ciudad2 = this.ciudadService.obtenerCiudades().filter( ciudad => ciudad.nombre != "Ambato" );
+    console.log("999999999999999999999", ciudad2);
+    this.ciudades = ciudad2;
 
-    // from(this.ciudades).pipe(
-    //   filter((ciudad: Ciudad) => ciudad.nombre === 'Manta')
-    // ).subscribe((ciudad: Ciudad) => console.log("FILTRO----:",ciudad))
+    // from(this.ciudadService.obtenerCiudades()).pipe(
+    //   filter((ciudad: Ciudad) => ciudad.nombre === 'Ambato')
+    // ).subscribe((ciudad: Ciudad) => console.log("FILTRO 2----:",ciudad))
+
+
+///console.log("111---", this.ciudadService);
+///this.ciudades$ = this.ciudadService.obtenerCiudadesObservable();
+///console.log("222---", this.ciudades$);
+
+////    ESTA ES LA QUE IMPIRME:
+/////   this.ciudades$ = this.ciudadService.obtenerCiudadesObservable();
+
     
   }
 
