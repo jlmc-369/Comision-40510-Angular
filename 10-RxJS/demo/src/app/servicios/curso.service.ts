@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { observable, Observable } from 'rxjs';
 import { Curso } from 'src/modelos/curso';
 
 @Injectable({
@@ -58,9 +59,31 @@ export class CursoService {
 
   constructor() { }
 
-  obtenerCursos(): Array<Curso>{
-    return this.cursos;
+  // obtenerCursos(): Array<Curso>{
+  //   return this.cursos;
+  // }
+
+  ////ya no voy a utilizar eel PROMISE si no el OBSERBABLE
+  obtenerCursosPromise(): Promise<Curso[]>{
+    return new Promise((resolve, reject) => {
+      if(this.cursos.length > 0){
+        resolve(this.cursos);
+      }else{
+        reject({
+          codigo: 0,
+          descripcion: "erreglo vacio",
+          data: []
+        });
+      }
+    });
   }
+
+  obtenerCursosObservable(): Observable<Curso[]>{
+    return new Observable<Curso[]>((suscriptor) => {
+      suscriptor.next(this.cursos);
+    });
+  }
+
 
   agregarCurso(curso: Curso){
     

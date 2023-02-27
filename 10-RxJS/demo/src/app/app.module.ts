@@ -19,9 +19,7 @@ import { TablaCursosComponent } from './componentes/tabla-cursos/tabla-cursos.co
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [
-    CursoService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
