@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-button (click)="redirigirInicio()">Inicio</button>
+    <a mat-button routerLink="cursos/cards">Cards Cursos</a>
+    <a mat-button routerLink="cursos/tabla">Tablas Cursos</a>
+    <a mat-button routerLink="cursos/agregar">Agregar Cursos</a>
+  </mat-toolbar>
+  
+<router-outlet></router-outlet>
