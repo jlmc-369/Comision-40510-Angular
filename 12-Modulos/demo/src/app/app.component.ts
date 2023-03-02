@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CursoService } from './servicios/curso.service';
+import { Curso } from './modelos/curso';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +11,12 @@ export class AppComponent {
   title = 'demo';
 
   constructor(
-    private cursoService: CursoService,
     private router: Router
   ){
 
   }
 
   redirigirInicio(){
-    this.router.navigate(['inicio', {mensaje: 'hola', usuario: 'Usuario'}]);
+    this.router.navigate(['inicio']);
   }
-
-
 }

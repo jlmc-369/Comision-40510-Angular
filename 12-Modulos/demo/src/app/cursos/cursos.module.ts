@@ -6,6 +6,9 @@ import { ListaCursosComponent } from './componentes/lista-cursos/lista-cursos.co
 import { EditarCursoComponent } from './componentes/editar-curso/editar-curso.component';
 import { MaterialModule } from '../material.module';
 import { CursosRoutingModule } from './cursos-routing.module';
+import { CursosService } from './servicios/cursos.service';
+import { TablaCursosComponent } from './componentes/tabla-cursos/tabla-cursos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,12 +16,17 @@ import { CursosRoutingModule } from './cursos-routing.module';
     AgregarCursoComponent,
     DetalleCursoComponent,
     ListaCursosComponent,
-    EditarCursoComponent
+    EditarCursoComponent,
+    TablaCursosComponent
   ],
   imports: [
     CommonModule,
     CursosRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
+  ],
+  providers:[
+    CursosService
   ]
 })
 export class CursosModule { }

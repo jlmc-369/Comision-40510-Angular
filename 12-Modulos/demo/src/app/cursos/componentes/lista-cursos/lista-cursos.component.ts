@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Curso } from 'src/modelos/curso';
-import { CursoService } from '../../../servicios/curso.service';
+//import { Curso } from 'src/modelos/curso';
+import { Curso } from 'src/app/modelos/curso';
 import { Observable } from 'rxjs';
+import { CursosService } from '../../servicios/cursos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-cursos',
@@ -13,24 +15,21 @@ export class ListaCursosComponent implements OnInit {
   cursos$!: Observable<Curso[]>
   
   constructor(
-    private CursoService: CursoService
+    private CursoService: CursosService,
+    private router: Router
   ){
   //console.log("datos de desde LISTACURSOS", CursoService.obtenerCursos());
  }
 
  ngOnInit(): void {
-  // console.log("Paso 1");
-  // ////this.cursos = this.CursoService.obtenerCursos();
-  // this.CursoService.obtenerCursosPromise().then((cursos: Curso[]) => {
-  //   console.log("paso 2");
-  //   this.cursos = cursos;
-  // }).catch((error: any) => {
-  //   console.log("Hubo un error en el Promise", error);
-  // });
-  // console.log("Paso 3");
-  this.cursos$ = this.CursoService.obtenerCursosObservable();
-  this.cursos$.subscribe((cursos: Curso[]) => {
-    this.cursos = cursos;
-  })
+  this.cursos$ = this.CursoService.obtenerCurso();
+ }
+
+ eliminarCurso(curso: Curso){
+  this.CursoService.eliminarCurso(curso);
+ }
+
+ redirigirEditarCurso(curso: Curso){
+  this.router.navigate(['cursos/editar', curso])
  }
 }

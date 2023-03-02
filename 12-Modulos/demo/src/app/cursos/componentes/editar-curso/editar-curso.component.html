@@ -1,1 +1,35 @@
-<p>editar-curso works!</p>
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="editarCurso()">
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Comision</mat-label>
+            <input matInput formControlName="comision">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Fecha Inicio</mat-label>
+            <input matInput [matDatepicker]="fechaInicio" formControlName="fechaInicio">
+            <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
+            <mat-datepicker #fechaInicio></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Fecha Fin</mat-label>
+            <input matInput [matDatepicker]="fechaFin" formControlName="fechaFin">
+            <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+            <mat-datepicker #fechaFin></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <div>
+            <mat-slide-toggle formControlName="inscripcionAbierta">Estado de la Comisión</mat-slide-toggle>
+        </div>
+
+        <div>
+            <button mat-raised-button type="submit">Guardar</button>
+        </div>
+    </form>
+</div>

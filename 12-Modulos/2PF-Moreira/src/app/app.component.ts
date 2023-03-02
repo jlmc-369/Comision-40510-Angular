@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Alumnos } from './modelos/alumnos';
-import { ListaAlumnosComponent } from './componentes/lista-alumnos/lista-alumnos.component';
+///import { ListaAlumnosComponent } from './componentes/lista-alumnos/lista-alumnos.component';
+import { ListaAlumnosComponent } from './alumnos/componentes/lista-alumnos/lista-alumnos.component';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({

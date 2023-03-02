@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
-import { ListaAlumnosComponent } from './componentes/lista-alumnos/lista-alumnos.component';
-import { AbmAlumnosComponent } from './componentes/abm-alumnos/abm-alumnos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modulos/material.module';
-import { EditarAlumnoDialogoComponent } from './componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonalizarTextoDirective } from './directivas/personalizar-texto.directive';
+import { CoreModule } from './core/core.module';
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { ToolbarComponent } from './core/toolbar/toolbar.component';
+import { ListaAlumnosComponent } from './alumnos/componentes/lista-alumnos/lista-alumnos.component';
+import { AbmAlumnosComponent } from './alumnos/componentes/abm-alumnos/abm-alumnos.component';
+import { EditarAlumnoDialogoComponent } from './alumnos/componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,10 @@ import { PersonalizarTextoDirective } from './directivas/personalizar-texto.dire
     PersonalizarTextoDirective
   ],
   imports: [
-    MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
