@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Alumnos } from '../../modelos/alumnos';
+import { Alumnos } from 'src/app/modelos/alumnos';
 import { ListaAlumnosComponent } from '../lista-alumnos/lista-alumnos.component';
 
 @Component({

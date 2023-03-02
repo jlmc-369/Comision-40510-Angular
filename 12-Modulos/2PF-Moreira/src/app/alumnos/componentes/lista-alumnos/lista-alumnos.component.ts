@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { Alumnos } from '../../modelos/alumnos';
+import { Alumnos } from 'src/app/modelos/alumnos';
 import { EditarAlumnoDialogoComponent } from '../editar-alumno-dialogo/editar-alumno-dialogo.component';
 
 @Component({
