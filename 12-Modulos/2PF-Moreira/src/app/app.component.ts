@@ -11,13 +11,13 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class AppComponent {
   ///@Input() alumnoNuevo! : Alumnos[];
-  title = '1PF-Moreira';
+  title = '2PF-Moreira';
   //alumnos: any;
   ///Alumnos: any;
 
-  agregarAlumno(alumno: Alumnos){
-    console.log("ALUMNO NUEVO desde root",alumno);
-    ListaAlumnosComponent.Alumnos.push(alumno);
-    //let dataSource = new MatTableDataSource<Alumnos>(this.alumnos)    
-  }
+  // agregarAlumno(alumno: Alumnos){
+  //   console.log("ALUMNO NUEVO desde root",alumno);
+  //   ListaAlumnosComponent.Alumnos.push(alumno);
+  //   //let dataSource = new MatTableDataSource<Alumnos>(this.alumnos)    
+  // }
 }
