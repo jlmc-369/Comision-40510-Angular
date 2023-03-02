@@ -21,10 +21,14 @@
 }
 
 .contenedor-abmAlumnos{
-    grid-area: main2;
+    grid-area: main2-11;
     margin-bottom: 50px;    
 }
 
 .contenedor-listaAlumnos{
-    grid-area: main1;
+    grid-area: main111;
+}
+
+.contenido{
+    grid-area: main2;
 }

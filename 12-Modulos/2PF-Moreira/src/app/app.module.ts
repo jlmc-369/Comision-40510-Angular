@@ -13,6 +13,7 @@ import { AbmAlumnosComponent } from './alumnos/componentes/abm-alumnos/abm-alumn
 import { EditarAlumnoDialogoComponent } from './alumnos/componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
