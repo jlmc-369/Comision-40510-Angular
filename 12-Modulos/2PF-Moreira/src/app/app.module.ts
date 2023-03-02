@@ -12,6 +12,7 @@ import { ListaAlumnosComponent } from './alumnos/componentes/lista-alumnos/lista
 import { AbmAlumnosComponent } from './alumnos/componentes/abm-alumnos/abm-alumnos.component';
 import { EditarAlumnoDialogoComponent } from './alumnos/componentes/editar-alumno-dialogo/editar-alumno-dialogo.component';
 import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
