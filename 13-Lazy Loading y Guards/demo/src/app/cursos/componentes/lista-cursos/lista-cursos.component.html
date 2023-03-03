@@ -1,0 +1,27 @@
+<!-- <div>{{ cursos$ | async | json }}</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let curso of cursos$ | async">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{curso.nombre}}</mat-card-title>
+                    <mat-card-subtitle>{{curso.comision}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Impartido por: {{curso.profesor.nombre}}</p>
+                    <p>{{ curso.inscripcionAbierta }}</p>
+                </mat-card-content>
+                <img src="https://froicorp.net/FroiCorp-logo-002.png" alt="" class="card-imagen">
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="redirigirEditarCurso(curso)">
+                        Editar
+                    </button>
+                    <button mat-button color="warn" (click)="eliminarCurso(curso)">
+                        Eliminar  
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
