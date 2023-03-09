@@ -1,0 +1,47 @@
+<table mat-table [dataSource]="dataSource">
+    <!-- Columna de nombre -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element"> {{ element.nombre }}</td>
+    </ng-container>
+
+    <!-- Columna de codigoProvincial -->
+    <ng-container matColumnDef="codigoProvincial">
+        <th mat-header-cell *matHeaderCellDef>Código Provincial</th>
+        <td mat-cell *matCellDef="let element"> {{ element.provincia.codigoProvincial }}</td>
+    </ng-container>
+
+    <!-- Columna de poblacion -->
+    <ng-container matColumnDef="poblacion">
+        <th mat-header-cell *matHeaderCellDef>Población</th>
+        <td mat-cell *matCellDef="let element"> {{element.poblacion}}</td>
+    </ng-container>
+
+    <!-- Columna de superficie -->
+    <ng-container matColumnDef="superficie">
+        <th mat-header-cell *matHeaderCellDef>Superficie</th>
+        <td mat-cell *matCellDef="let element"> {{ element.superficie }}</td>
+    </ng-container>
+
+    <!-- Columna de fechaCantonizacion-->
+    <ng-container matColumnDef="fechaCantonizacion">
+        <th mat-header-cell *matHeaderCellDef>fecha de Cantonización</th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaCantonizacion | date:'dd/MM/YYYY' }}</td>
+    </ng-container>
+
+    <!-- Columna de acciones -->
+    <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+</table>
