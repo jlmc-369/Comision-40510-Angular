@@ -1,0 +1,33 @@
+<h4 appPersonalizarTexto>Ingresar un nuevo estudiante</h4>
+<div class="col-md-10">
+    <input type="text" class="form-control"  placeholder="Nombre">
+    <input type="text" class="form-control" placeholder="Apellido">
+    <input type="text" class="form-control" placeholder="Edad">
+    <input type="text" class="form-control"  placeholder="Curso">
+    <button type="button" class="btn btn-success" (click)="crearAlumno()">Crear Alumno</button>
+</div>
+
+
+
+<!-- <app-lista-alumnos  [alumnoNuevo]="alumnoNuevo" (imprimirEstudianteLista)="agregarAlumno($event)" class="listaAlumnos"></app-lista-alumnos> -->
+
+<!-- <div class="row">
+    <div class="col-md-10">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let nombre of alumnos">
+                <td>
+                   {{nombre}}
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->

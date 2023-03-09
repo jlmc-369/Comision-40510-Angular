@@ -2,18 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '../../material.module';
+import { HomeComponent } from './home/home.component';
+import { Page404Component } from './page404/page404.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    MaterialModule
+  declarations: [
+    HomeComponent,
+    Page404Component
   ],
-  exports: [
-    MaterialModule
-  ],
+  imports: [],
   providers: []
 })
-export class CoreModule {
-
-}
+export class CoreModule {}

@@ -15,7 +15,7 @@
                 <img src="https://froicorp.net/FroiCorp-logo-002.png" alt="" class="card-imagen">
                 <mat-card-actions>
                     <ng-container *ngIf="sesion$ | async as sesion">
-                        <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary" (click)="redirigirEditarCurso(curso)">
+                        <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary" (click)="abrirDialog(curso)">
                             Editar
                         </button>
                         <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-button color="warn" (click)="eliminarCurso(curso)">

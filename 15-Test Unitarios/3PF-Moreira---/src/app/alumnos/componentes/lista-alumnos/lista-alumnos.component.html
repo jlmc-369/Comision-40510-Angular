@@ -1,0 +1,55 @@
+<h4 appPersonalizarTexto>Lista de estudiantes activos en el curso de Angular</h4>
+
+<table mat-table [dataSource]="dataSource" class="table table-striped table-bordered border-primary" >
+
+    <ng-container matColumnDef="idAl">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <!-- <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td> -->
+        <!-- <td mat-cell *matCellDef="let element"> {{dataSource.filteredData.indexOf(element)}} </td> -->
+        <td mat-cell *matCellDef="let element"> {{element.idAl}} </td>
+      </ng-container>
+
+
+    <!-- Columna del nombre -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}}</td>
+    </ng-container>
+
+    <!-- Columna del Apellido -->
+    <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef>Apellido</th>
+        <td mat-cell *matCellDef="let element"> {{element.apellido}}</td>
+    </ng-container>
+
+    <!-- Columna para la Edad -->
+    <ng-container matColumnDef="edad">
+        <th mat-header-cell *matHeaderCellDef>Edad</th>
+        <td mat-cell *matCellDef="let element"> {{element.edad}}</td>
+    </ng-container>
+
+   <!-- Columna del Curso -->
+    <ng-container matColumnDef="curso">
+        <th mat-header-cell *matHeaderCellDef>Curso</th>
+        <td mat-cell *matCellDef="let element"> {{element.curso}}</td>
+    </ng-container>
+
+    <!-- Columna de Opciones -->
+    <ng-container matColumnDef="opciones">
+        <th mat-header-cell *matHeaderCellDef>Agrega, edita o elimina al Alumno</th>
+        <td mat-cell *matCellDef="let element" style="text-align:center">
+            <!-- <button mat-icon-button color="primary" (click)="abrirModal(element)">
+                <mat-icon >edit</mat-icon>
+            </button> -->
+            <a class="waves-effect waves-light btn-large" (click)="abrirModal(element)"><i class="material-icons right">settings</i>Opciones</a>
+            <!-- <button mat-icon-button color="warn" (click)="eliminar(element.idAl)">
+                <mat-icon>delete</mat-icon>
+            </button>             -->
+        </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+Copy
+    
+</table>

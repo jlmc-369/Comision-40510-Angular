@@ -7,15 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { Page404Component } from './core/componentes/page404/page404.component';
 import { InicioComponent } from './core/componentes/inicio/inicio.component';
-import { CoreModule } from './core/componentes/core.module'
+import { CoreModule } from './core/core.module'
 import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    Page404Component,
-    InicioComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { CursosService } from '../../servicios/cursos.service';
 import { Router } from '@angular/router';
 import { SesionService } from 'src/app/core/servicios/sesion.service';
 import { Sesion } from 'src/app/modelos/sesion';
+import { MatDialog } from '@angular/material/dialog';
+import { EditarCursoComponent } from '../editar-curso/editar-curso.component';
 
 @Component({
   selector: 'app-lista-cursos',
@@ -20,7 +22,8 @@ export class ListaCursosComponent implements OnInit {
   constructor(
     private CursoService: CursosService,
     private router: Router,
-    private sesion: SesionService
+    private sesion: SesionService,
+    private dialog: MatDialog
   ){
   //console.log("datos de desde LISTACURSOS", CursoService.obtenerCursos());
  }
@@ -31,10 +34,20 @@ export class ListaCursosComponent implements OnInit {
  }
 
  eliminarCurso(curso: Curso){
-  this.CursoService.eliminarCurso(curso);
+  this.CursoService.eliminarCurso(curso).subscribe((curso: Curso) => {
+    alert(`${curso.nombre} eliminado`);
+    this.cursos$ = this.CursoService.obtenerCurso();
+  });
  }
 
- redirigirEditarCurso(curso: Curso){
-  this.router.navigate(['cursos/editar', curso])
+ abrirDialog(curso: Curso){
+  this.dialog.open(EditarCursoComponent, {
+    // height:'800px',
+    // width:'500px',
+    data: curso
+  }).afterClosed().subscribe((curso: Curso) => {
+    alert(`${curso.nombre} actualizado correctamente`);
+    this.cursos$ = this.CursoService.obtenerCurso();
+  });
  }
 }

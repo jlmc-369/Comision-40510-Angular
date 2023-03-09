@@ -1,4 +1,5 @@
-<div class="container">
+<h1 mat-dialog-title> Editar Curso - {{ curso.nombre }}</h1>
+<div mat-dialog-content>
     <form [formGroup]="formulario" (ngSubmit)="editarCurso()">
         <mat-form-field>
             <mat-label>Nombre</mat-label>
@@ -24,12 +25,25 @@
             <mat-datepicker #fechaFin></mat-datepicker>
         </mat-form-field>
         <br>
+
+        
+        <mat-form-field>
+            <mat-label>Profesor</mat-label>
+            <mat-select formControlName="profesor">
+                <mat-option *ngFor="let profesor of profesores$ | async" [value]="profesor"> {{profesor.nombre}} </mat-option>
+            </mat-select>
+        </mat-form-field>   
+
+        <br>
+
         <div>
             <mat-slide-toggle formControlName="inscripcionAbierta">Estado de la Comisión</mat-slide-toggle>
         </div>
 
-        <div>
-            <button mat-raised-button type="submit">Guardar</button>
-        </div>
+
     </form>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="editarCurso()">Guardar</button>
 </div>

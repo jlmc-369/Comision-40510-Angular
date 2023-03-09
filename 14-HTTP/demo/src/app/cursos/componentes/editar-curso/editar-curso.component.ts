@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Curso } from 'src/app/modelos/curso';
+import { Profesor } from 'src/app/modelos/profesor';
 import { CursosService } from '../../servicios/cursos.service';
+import { Observable } from 'rxjs';
+import { ProfesorService } from 'src/app/core/servicios/profesor.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DIALOG_DATA } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-editar-curso',
@@ -11,23 +16,26 @@ import { CursosService } from '../../servicios/cursos.service';
 })
 export class EditarCursoComponent implements OnInit {
   formulario!: FormGroup;
+  profesores$!: Observable<Profesor[]>;
 
   constructor(
-    private activateRoute: ActivatedRoute,
     private cursoService: CursosService,
-    private router: Router
+    private router: Router,
+    private profesores: ProfesorService,
+    private dialogoRef: MatDialogRef<EditarCursoComponent>,
+    @Inject(MAT_DIALOG_DATA) public curso: Curso
   ){}
 
 ngOnInit(): void {
-    this.activateRoute.paramMap.subscribe((parametros) => {
-      this.formulario = new FormGroup({
-        comision: new FormControl(parametros.get('comision')),
-        fechaFin: new FormControl(new Date(parametros.get('fechaFin') || '')),
-        fechaInicio: new FormControl(new Date(parametros.get('fechaInicio') || '')),
-        inscripcionAbierta: new FormControl(parametros.get('inscripcionAbierta' || false)),
-        nombre: new FormControl(parametros.get('nombre'))
-        ///profesor: new FormControl(parametros.get('profesor'))
-      })
+    this.profesores$ = this.profesores.obtenerProfesor();
+    this.formulario = new FormGroup({
+      comision: new FormControl(this.curso.comision),
+      fechaFin: new FormControl(this.curso.fechaFin),
+      fechaInicio: new FormControl(this.curso.fechaInicio),
+      inscripcionAbierta: new FormControl(this.curso.inscripcionAbierta),
+      nombre: new FormControl(this.curso.nombre),
+      profesor: new FormControl(this.curso.profesor)
+      ///profesor: new FormControl(parametros.get('profesor'))
     })
 }
 
@@ -35,21 +43,21 @@ editarCurso(){
   console.log("antes:",this.formulario.value.comision);
   
   let curso: Curso = {
+    id: this.curso.id,
     nombre: this.formulario.value.nombre,
     comision: this.formulario.value.comision,
     fechaInicio: this.formulario.value.fechaInicio,
     fechaFin: this.formulario.value.fechaFin,
     inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-    profesor: {
-      nombre: 'Un man',
-      correo: 'mail@gmail.com',
-      fechaRegistro: new Date
-    }
+    profesor: this.formulario.value.profesor
   }
-  console.log("durante:",this.formulario.value.comision);
-  this.cursoService.editarCurso(curso);
-  console.log("despues:",this.formulario.value.comision);
-  this.router.navigate(['cursos/listar'])
+  ///console.log("durante:",this.formulario.value.comision);
+  this.cursoService.editarCurso(curso).subscribe((curso: Curso) => {
+    this.dialogoRef.close(curso);
+  });
+  
+  ///console.log("despues:",this.formulario.value.comision);
+  ///this.router.navigate(['cursos/listar'])
 }
 
 }
