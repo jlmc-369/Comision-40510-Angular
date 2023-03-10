@@ -15,16 +15,15 @@ export class AgregarPaisComponent implements OnInit{
   constructor(
     private router: Router,
     private paisesService: PaisesService
-    ///private paisesService: PaisesService
   ){}
 
   ngOnInit(): void {
       this.formulario = new FormGroup({
-        comision: new FormControl(''),
-        fechaFin: new FormControl(''),
-        fechaInicio: new FormControl(''),
-        inscripcionAbierta: new FormControl(false),
-        nombre: new FormControl('')
+        nombre: new FormControl(''),
+        empresas: new FormControl(''),
+        codigo: new FormControl(''),
+        foto: new FormControl(''),
+        tecnologia5g: new FormControl('')
       })
   }
 

@@ -40,8 +40,8 @@ editarPais(){
     nombre: this.formulario.value.nombre,
     empresas: this.formulario.value.empresas,
     codigo: this.formulario.value.codigo,
-    ///foto: this.formulario.value.foto,
-    foto: "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/SYM35JYEY5EC7KL54IABNIUG2M.jpg",
+    foto: this.formulario.value.foto,
+    ///foto: "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/SYM35JYEY5EC7KL54IABNIUG2M.jpg",
     tecnologia5g: this.formulario.value.tecnologia5g
   }
   ///console.log("durante:",this.formulario.value.comision);

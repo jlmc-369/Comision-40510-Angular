@@ -6,7 +6,7 @@
                     <mat-card-title>{{pais.nombre}}</mat-card-title>
                     <mat-card-subtitle>{{pais.codigo}}</mat-card-subtitle>
                 </mat-card-header>
-                <img src="https://froicorp.net/FroiCorp-logo-002.png" alt="" class="card-imagen">
+                <img src="{{pais.foto}}" alt="" class="card-imagen">
                 <mat-card-actions>
                     <ng-container *ngIf="sesion$ | async as sesion">
                         <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary" (click)="abrirDialog(pais)">

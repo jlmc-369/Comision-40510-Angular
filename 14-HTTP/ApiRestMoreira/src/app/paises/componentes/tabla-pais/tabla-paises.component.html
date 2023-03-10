@@ -1,35 +1,21 @@
 <table mat-table [dataSource]="dataSource">
     <!-- Columna de nombre -->
     <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <th mat-header-cell *matHeaderCellDef>Nombre del País</th>
         <td mat-cell *matCellDef="let element"> {{element.nombre}}</td>
     </ng-container>
-
-    <!-- Columna de comision -->
     <ng-container matColumnDef="comision">
-        <th mat-header-cell *matHeaderCellDef>Comision</th>
-        <td mat-cell *matCellDef="let element"> {{element.comision}}</td>
+        <th mat-header-cell *matHeaderCellDef>Cantidad de Empresas Telefónicas</th>
+        <td mat-cell *matCellDef="let element"> {{element.empresas}}</td>
     </ng-container>
-
-    <!-- Columna de Fecha de Inicio -->
-    <ng-container matColumnDef="fechaInicio">
-        <th mat-header-cell *matHeaderCellDef>Inicia el</th>
-        <td mat-cell *matCellDef="let element"> {{element.fechaInicio | date:'dd/MM/YYYY' }}</td>
+    <ng-container matColumnDef="comision">
+        <th mat-header-cell *matHeaderCellDef>Código del Paíssss</th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}}</td>
     </ng-container>
-
-    <!-- Columna de Fecha de Fin -->
-    <ng-container matColumnDef="fechaFin">
-        <th mat-header-cell *matHeaderCellDef>Finaliza el</th>
-        <td mat-cell *matCellDef="let element"> {{element.fechaFin | date:'dd/MM/YYYY' }}</td>
-    </ng-container>
-
-    <!-- Columna de Estado de Inscripciones -->
     <ng-container matColumnDef="inscripcionAbierta">
         <th mat-header-cell *matHeaderCellDef>Estado del curso</th>
-        <td mat-cell *matCellDef="let element"> {{element.inscripcionAbierta}}</td>
+        <td mat-cell *matCellDef="let element"> {{element.tecnologia5g}}</td>
     </ng-container>
-
-    <!-- Columna de acciones -->
     <ng-container matColumnDef="acciones">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td mat-cell *matCellDef="let element">
