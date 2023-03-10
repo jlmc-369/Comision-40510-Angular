@@ -1,0 +1,22 @@
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="agregarPais()">
+        <mat-form-field>
+            <mat-label>Nombre de País</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Cantidad de Empresas Telefónicas</mat-label>
+            <input matInput formControlName="empresas">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Código Internacional</mat-label>
+            <input matInput formControlName="codigo">
+        </mat-form-field><br>
+        <div>
+            <mat-slide-toggle formControlName="tecnologia5g">País Cuenta con Tecnología 5G</mat-slide-toggle>
+        </div><br>
+        <div>
+            <button mat-raised-button type="submit">Guardar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title> Editar País - {{ pais.nombre }}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formulario" (ngSubmit)="editarPais()">
+        <mat-form-field>
+            <mat-label>Nombre del País</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Cantidad de Empresas Telefónicas</mat-label>
+            <input matInput formControlName="empresas">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Código del País</mat-label>
+            <input matInput formControlName="codigo">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Foto</mat-label>
+            <input matInput formControlName="foto">
+        </mat-form-field><br>
+        <div>
+            <mat-slide-toggle formControlName="tecnologia5g">Posee Tecnología 5G</mat-slide-toggle>
+        </div>
+    </form>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button matDialogClose mat-button color="secundary">Cerrar</button>
+    <button mat-raised-button color="primary" (click)="editarPais()">Guardar</button>
+    
+</div>

@@ -1,6 +1,12 @@
-<h1>En esta esta el filtro:</h1>
-<app-lista-ciudades></app-lista-ciudades>
-
-<hr>
-
-<app-tabla-ciudades></app-tabla-ciudades>
+<ng-container *ngIf="sesion$ | async as sesion">
+  <mat-toolbar color="primary" *ngIf="sesion.sesionActiva">
+    <span>Paises con Tecnología 5G</span>
+    <span class="example-spacer"></span>
+    <button mat-button (click)="redirigirInicio()">Inicio</button>
+    <a mat-button routerLink="paises/listar">Lista de Paises</a>
+    <a mat-button routerLink="paises/egregar" *ngIf="sesion.usuarioActivo?.esAdmin">Agregar Pais</a>
+    <a mat-button (click)="logout()">LOGOUT</a>
+  </mat-toolbar> 
+</ng-container>
+  
+<router-outlet></router-outlet>
