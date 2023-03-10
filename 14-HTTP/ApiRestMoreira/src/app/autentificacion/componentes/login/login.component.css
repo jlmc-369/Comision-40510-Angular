@@ -1,3 +1,27 @@
 .fill{
     width: 100%;
 }
+
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .boton {
+    display: flex;
+    justify-content: flex-end;
+  }
