@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '2PF-Moreira';
+  title = '3PF-Moreira';
   constructor(
     private router: Router
   ){
