@@ -1,0 +1,56 @@
+<!-- <h1>Iniciar Sesión</h1>
+
+<form [formGroup]="formulario" (ngSubmit)="login()">
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="outline" class="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput type="text" formControlName="usuario">
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline" class="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="text" formControlName="contrasena">
+            </mat-form-field>
+        </div>
+        <div class="col-md-2">
+            <mat-slide-toggle formControlName="esAdmin">Es admin</mat-slide-toggle>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" mat-raised-button color="primary">Login</button>
+        </div>
+    </div>
+</form> -->
+
+<div class="form-wraper">
+   <div class="form-container card">
+     <div class="form-header">
+       <img src="./../../assets/car-key.svg"  class="main-lock-icon" alt="">
+     </div>
+ 
+     <div class="form-body">
+       <mat-form-field class="justifier">
+           <input matInput placeholder="Email" text="email" class="form-input">
+       </mat-form-field>
+       <mat-form-field class="justifier">
+           <input matInput placeholder="Password" text="password" class="form-input">
+       </mat-form-field>
+     </div>
+ 
+     <div class="form-footer">
+         <button mat-raised-button class="btn custom-btn"> 
+             <mat-icon>input</mat-icon> Login
+         </button>
+         <div class="txt">
+           OR
+         </div>
+         <button mat-raised-button class="btn"> 
+           <img src="./../../assets/search.svg" alt="" class="google-icon"> Login With Google
+         </button>
+     </div>
+     <div class="additional-link">
+       <a routerLink="/signup">No Account? <strong>Create one here</strong></a>
+     </div>
+   </div>
+ </div>

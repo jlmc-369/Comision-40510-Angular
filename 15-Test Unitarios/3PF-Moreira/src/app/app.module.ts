@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+///import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+///import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonalizarTextoDirective } from './directivas/personalizar-texto.directive';
 import { CoreModule } from './core/core.module';
 import { NavbarComponent } from './core/navbar/navbar.component';
@@ -14,6 +15,9 @@ import { EditarAlumnoDialogoComponent } from './alumnos/componentes/editar-alumn
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material.module';
+import { AutentificacionModule } from './autentificacion/autentificacion.module';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     SharedModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    AutentificacionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

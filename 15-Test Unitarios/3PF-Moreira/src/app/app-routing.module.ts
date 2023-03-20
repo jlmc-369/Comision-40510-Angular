@@ -1,23 +1,29 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ListaAlumnosComponent } from './alumnos/componentes/lista-alumnos/lista-alumnos.component';
-import { ListaClasesComponent } from './clases/componentes/lista-clases/lista-clases.component';
-
+import { Routes, RouterModule  } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { Page404Component } from './core/page404/page404.component';
-import { ListaCursosComponent } from './cursos/componentes/lista-cursos/lista-cursos.component';
+import { SesionGuard } from './core/guards/sesion.guard';
 
 const routes: Routes = [
-  {path: 'alumnos' , component: ListaAlumnosComponent},
-  {path: 'clases' , component: ListaClasesComponent},
-  {path: 'cursos' , component: ListaCursosComponent},
-  {path: 'inicio' , component: HomeComponent},
-  {path: '' , redirectTo: 'inicio', pathMatch: 'full'},
-  {path: '**', component: Page404Component} ,
-];
+  { path: 'inicio', component: HomeComponent, canActivate:[SesionGuard] },
+  {
+    path: 'cursos',
+    loadChildren: () => import('./cursos/cursos.module').then((modulo) => modulo.CursosModule),
+    canLoad: [SesionGuard]
+  },
+  {
+    path: 'auth',
+    loadChildren:()=>import('./autentificacion/autentificacion.module').then((modulo)=>modulo.AutentificacionModule)
+  },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '**', component: Page404Component }
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
+  // {path: 'alumnos' , component: ListaAlumnosComponent},
+  // {path: 'clases' , component: ListaClasesComponent},
+  // {path: 'cursos' , component: ListaCursosComponent},
