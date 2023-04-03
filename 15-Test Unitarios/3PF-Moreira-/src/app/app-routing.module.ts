@@ -8,7 +8,7 @@ import { Page404Component } from './core/page404/page404.component';
 import { ListaCursosComponent } from './cursos/componentes/lista-cursos/lista-cursos.component';
 
 const routes: Routes = [
-  {path: 'alumnos' , component: ListaAlumnosComponent},
+  {path: 'alumnosss' , component: ListaAlumnosComponent},
   {path: 'clases' , component: ListaClasesComponent},
   {path: 'cursos' , component: ListaCursosComponent},
   {path: 'inicio' , component: HomeComponent},
