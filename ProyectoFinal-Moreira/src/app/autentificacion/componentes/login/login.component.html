@@ -1,0 +1,9 @@
+<div class="login">
+    <form [formGroup]="formulario" (ngSubmit)="login()" class="custom-form">
+        <h1>Login</h1>
+        <input matInput type="text" formControlName="usuario" required="required" placeholder="Usuario" >
+        <input matInput type="text" formControlName="contrasena" required="required" placeholder="Contraseña">
+        <mat-slide-toggle formControlName="esAdmin">Usuario Administrador</mat-slide-toggle>
+        <button type="submit" >Login</button>
+    </form>
+</div>
