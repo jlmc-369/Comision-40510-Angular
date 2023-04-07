@@ -5,12 +5,8 @@
             <mat-panel-title>Alumnos</mat-panel-title>
             <mat-icon>face</mat-icon>
         </mat-expansion-panel-header>
-        
-       
-        <!-- <a mat-button routerLink="cursos/listar">Listar Cursos</a> -->
-        <div class="list-group">
-            <button type=button class="list-group-item list-group-item-action"  routerLink="cursos/listar">Gestionar Alumnos</button>
-        </div>
+        <p class="no-aun">Listado de Alumnos</p>
+        <p>Agregar un Alumno Nuevo</p>
     </mat-expansion-panel>
   
     <mat-expansion-panel hideToggle>
@@ -27,8 +23,10 @@
         <mat-panel-title>Cursos</mat-panel-title>
         <mat-icon>assignment</mat-icon>
     </mat-expansion-panel-header>
-    <p>Lista de Crusos</p>
-    <p>Agregar Un Curso Nuevo</p>
+    <div class="list-group">
+        <button type=button class="list-group-item list-group-item-action"  routerLink="cursos/listar">Listar Cursos</button>
+        <button type=button class="list-group-item list-group-item-action"  routerLink="cursos/agregar">Agregar Un Curso Nuevo</button>
+    </div>
   </mat-expansion-panel>
 
 </mat-accordion>
