@@ -8,4 +8,5 @@ export interface Curso{
     inscripcionAbierta: boolean;
     fechaInicio: Date;
     fechaFin: Date;
+    foto: string;
 }

@@ -34,7 +34,8 @@ ngOnInit(): void {
       fechaInicio: new FormControl(this.curso.fechaInicio),
       inscripcionAbierta: new FormControl(this.curso.inscripcionAbierta),
       nombre: new FormControl(this.curso.nombre),
-      profesor: new FormControl(this.curso.profesor)
+      profesor: new FormControl(this.curso.profesor),
+      foto: new FormControl(this.curso.foto),
       ///profesor: new FormControl(parametros.get('profesor'))
     })
 }
@@ -49,7 +50,8 @@ editarCurso(){
     fechaInicio: this.formulario.value.fechaInicio,
     fechaFin: this.formulario.value.fechaFin,
     inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-    profesor: this.formulario.value.profesor
+    profesor: this.formulario.value.profesor,
+    foto: this.formulario.value.foto,
   }
   ///console.log("durante:",this.formulario.value.comision);
   this.cursoService.editarCurso(curso).subscribe((curso: Curso) => {

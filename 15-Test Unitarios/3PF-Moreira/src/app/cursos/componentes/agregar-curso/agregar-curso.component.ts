@@ -30,7 +30,8 @@ export class AgregarCursoComponent implements OnInit{
         fechaInicio: new FormControl(''),
         inscripcionAbierta: new FormControl(false),
         nombre: new FormControl(''),
-        profesor: new FormControl('')
+        profesor: new FormControl(''),
+        foto: new FormControl(''),
       })
   }
 
@@ -44,7 +45,8 @@ export class AgregarCursoComponent implements OnInit{
       fechaInicio: this.formulario.value.fechaInicio,
       fechaFin: this.formulario.value.fechaFin,
       inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-      profesor: this.formulario.value.profesor
+      profesor: this.formulario.value.profesor,
+      foto: 'https://nimapinfotech.com/wp-content/uploads/2023/01/como-comecar-com-angular.png',
     }
     ///console.log("durante:",this.formulario.value.comision);
     this.cursoService.agregarCurso(curso).subscribe((curso: Curso) => {

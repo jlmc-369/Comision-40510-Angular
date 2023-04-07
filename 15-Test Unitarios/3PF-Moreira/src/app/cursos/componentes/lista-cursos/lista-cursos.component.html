@@ -5,14 +5,15 @@
         <div class="col-md-3" *ngFor="let curso of cursos$ | async">
             <mat-card>
                 <mat-card-header>
+                    <!-- <p><img src="https://froicorp.net/FroiCorp-logo-002.png" alt="" class="card-imagen"></p><br> -->
                     <mat-card-title>{{curso.nombre}}</mat-card-title>
                     <mat-card-subtitle>{{curso.comision}}</mat-card-subtitle>
                 </mat-card-header>
+                <img src="{{curso.foto}}" alt="" class="card-imagen">
                 <mat-card-content>
-                    <p>Impartido por: {{curso.profesor.nombre}}</p>
-                    <p>{{ curso.inscripcionAbierta }}</p>
+                    <p>Impartido por: {{curso.profesor}}</p>
+                    <p>Disponibilidad: </p>{{ curso.inscripcionAbierta ? "Si" : "No" }}
                 </mat-card-content>
-                <img src="https://froicorp.net/FroiCorp-logo-002.png" alt="" class="card-imagen">
                 <mat-card-actions>
                     <ng-container *ngIf="sesion$ | async as sesion">
                         <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary" (click)="abrirDialog(curso)">
