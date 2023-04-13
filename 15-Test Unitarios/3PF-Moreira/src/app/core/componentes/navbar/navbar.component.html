@@ -5,8 +5,13 @@
             <mat-panel-title>Alumnos</mat-panel-title>
             <mat-icon>face</mat-icon>
         </mat-expansion-panel-header>
-        <p class="no-aun">Listado de Alumnos</p>
-        <p>Agregar un Alumno Nuevo</p>
+        <div class="list-group">
+            <button type=button class="list-group-item list-group-item-action no-aun"  routerLink="page404">Listar Alumnos</button>
+            <button type=button class="list-group-item list-group-item-action no-aun"  routerLink="page404">Agregar Un Alumno Nuevo</button>
+            <!-- <ng-container *ngIf="sesion$ | async as sesion">
+                <button *ngIf="sesion.usuarioActivo?.esAdmin" type=button class="list-group-item list-group-item-action listo"  routerLink="page404">Agregar Un Alumno Nuevo</button>
+            </ng-container> -->
+        </div>
     </mat-expansion-panel>
   
     <mat-expansion-panel hideToggle>
@@ -14,8 +19,13 @@
           <mat-panel-title>Clases</mat-panel-title>
           <mat-icon>class</mat-icon>
       </mat-expansion-panel-header>
-      <p>Listado de las Clases</p>
-      <p>Agregar Una Clase Nueva</p>
+      <div class="list-group">
+        <button type=button class="list-group-item list-group-item-action no-aun"  routerLink="page404">Listar Clases</button>
+        <button type=button class="list-group-item list-group-item-action no-aun"  routerLink="page404">Agregar Una Clase Nueva</button>
+        <!-- <ng-container *ngIf="sesion$ | async as sesion">
+            <button *ngIf="sesion.usuarioActivo?.esAdmin" type=button class="list-group-item list-group-item-action listo"  routerLink="page404">Agregar Una Clase Nueva</button>
+        </ng-container> -->
+    </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel hideToggle>
@@ -24,13 +34,25 @@
         <mat-icon>assignment</mat-icon>
     </mat-expansion-panel-header>
     <div class="list-group">
-        <button type=button class="list-group-item list-group-item-action"  routerLink="cursos/listar">Listar Cursos</button>
-        <button type=button class="list-group-item list-group-item-action"  routerLink="cursos/agregar">Agregar Un Curso Nuevo</button>
+        <button type=button class="list-group-item list-group-item-action listo"  routerLink="cursos/listar">Listar Cursos</button>
+        <button type=button class="list-group-item list-group-item-action listo"  routerLink="cursos/agregar">Agregar Un Curso Nuevo</button>
+        <!-- <button type=button class="list-group-item list-group-item-action listo"  (click)="prueba()">Agregar Un Curso Nuevo</button> -->
+        <!-- <ng-container *ngIf="sesion$ | async as sesion">
+            <button *ngIf="sesion.usuarioActivo?.esAdmin" type=button class="list-group-item list-group-item-action listo"  routerLink="cursos/agregar">Agregar Un Curso Nuevo</button>
+        </ng-container>         -->
     </div>
   </mat-expansion-panel>
 
 </mat-accordion>
 
+<!-- <ng-container *ngIf="sesion$ | async as sesion">
+    <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary">
+        Editar
+    </button>
+    <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-button color="warn" >
+        Eliminar  
+    </button>
+</ng-container> -->
 
 
 

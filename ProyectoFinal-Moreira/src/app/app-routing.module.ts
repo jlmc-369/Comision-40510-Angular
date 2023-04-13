@@ -7,6 +7,11 @@ import { SesionGuard } from './core/guards/sesion.guard';
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent, canActivate:[SesionGuard] },
   {
+    path: 'alumnos',
+    loadChildren: () => import('./alumnos/alumnos.module').then((modulo) => modulo.AlumnosModule),
+    canLoad: [SesionGuard]
+  },
+  {
     path: 'cursos',
     loadChildren: () => import('./cursos/cursos.module').then((modulo) => modulo.CursosModule),
     canLoad: [SesionGuard]

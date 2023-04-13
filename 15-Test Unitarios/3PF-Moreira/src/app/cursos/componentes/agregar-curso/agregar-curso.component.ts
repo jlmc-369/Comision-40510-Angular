@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Curso } from 'src/app/modelos/curso';
 import { CursosService } from '../../servicios/cursos.service';
@@ -29,7 +29,7 @@ export class AgregarCursoComponent implements OnInit{
         fechaFin: new FormControl(''),
         fechaInicio: new FormControl(''),
         inscripcionAbierta: new FormControl(false),
-        nombre: new FormControl(''),
+        nombre: new FormControl('',[Validators.required]),
         profesor: new FormControl(''),
         foto: new FormControl(''),
       })
@@ -45,7 +45,7 @@ export class AgregarCursoComponent implements OnInit{
       fechaInicio: this.formulario.value.fechaInicio,
       fechaFin: this.formulario.value.fechaFin,
       inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-      profesor: this.formulario.value.profesor,
+      profesor: this.formulario.value.profesor.nombre,
       foto: 'https://nimapinfotech.com/wp-content/uploads/2023/01/como-comecar-com-angular.png',
     }
     ///console.log("durante:",this.formulario.value.comision);

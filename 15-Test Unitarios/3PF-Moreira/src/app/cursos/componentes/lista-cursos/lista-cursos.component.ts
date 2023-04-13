@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import { Curso } from 'src/modelos/curso';
-import { Curso } from 'src/app/modelos/curso';
-import { Observable } from 'rxjs';
-import { CursosService } from '../../servicios/cursos.service';
 import { Router } from '@angular/router';
 import { SesionService } from 'src/app/core/servicios/sesion.service';
 import { Sesion } from 'src/app/modelos/sesion';
+import { Observable } from 'rxjs';
+import { Curso } from 'src/app/modelos/curso';
+import { CursosService } from '../../servicios/cursos.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditarCursoComponent } from '../editar-curso/editar-curso.component';
 

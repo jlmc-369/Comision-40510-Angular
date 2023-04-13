@@ -27,12 +27,12 @@ export class AppComponent implements OnInit {
     this.router.navigate(['inicio']);
   }
 
-  logout(){
-    let sesionLogout: Sesion = {
-      sesionActiva: false,
-      usuarioActivo: undefined
-    }
-    this.sesion.logout(sesionLogout);
-    this.router.navigate(['auth/login']);
-  }
+  // logout(){
+  //   let sesionLogout: Sesion = {
+  //     sesionActiva: false,
+  //     usuarioActivo: undefined
+  //   }
+  //   this.sesion.logout(sesionLogout);
+  //   this.router.navigate(['auth/login']);
+  // }
 }

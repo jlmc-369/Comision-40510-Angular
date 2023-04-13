@@ -11,14 +11,10 @@
   
 <router-outlet></router-outlet> -->
 
-
-
-  
-
 <div class="contenedor">
   <ng-container *ngIf="sesion$ | async as sesion">
-    <app-navbar class="contenedor-navbar" *ngIf="sesion.sesionActiva"></app-navbar>
-    <app-toolbar class="contenedor-toolbar" *ngIf="sesion.sesionActiva"></app-toolbar>
+    <app-navbar *ngIf="sesion.sesionActiva" class="contenedor-navbar" ></app-navbar>
+    <app-toolbar *ngIf="sesion.sesionActiva" class="contenedor-toolbar"></app-toolbar>
     <app-inicio *ngIf="sesion.sesionActiva"></app-inicio>
     <router-outlet class="contenido"></router-outlet>
   </ng-container>

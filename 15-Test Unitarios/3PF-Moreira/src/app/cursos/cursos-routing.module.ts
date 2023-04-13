@@ -10,7 +10,7 @@ const routes: Routes = [
     { path: '', canActivateChild:[SesionGuard], children: [
         { path: 'listar', component: ListaCursosComponent },
         { path: 'editar', component: EditarCursoComponent, canActivate:[AdminGuard] },
-        { path: 'egregar', component: AgregarCursoComponent, canActivate:[AdminGuard] }
+        { path: 'agregar', component: AgregarCursoComponent, canActivate:[AdminGuard] }
     ]}
 ];
 
