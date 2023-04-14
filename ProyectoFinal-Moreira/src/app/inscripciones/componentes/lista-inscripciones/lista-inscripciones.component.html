@@ -1,26 +1,26 @@
-<h1>Lista de Alumnos</h1>
+<h1>Lista de Alumnos Inscriptos</h1>
 <div class="container">
     <div class="row">
-        <div class="col-md-3" *ngFor="let alumno of alumnos$ | async">
+        <div class="col-md-3" *ngFor="let inscripcion of inscripciones$ | async">
             <mat-card class="card">
                 <mat-card-header>
                     <!-- <p><img src="https://froicorp.net/FroiCorp-logo-002.png" alt="" class="card-imagen"></p><br> -->
-                    <mat-card-title>{{alumno.nombre}}</mat-card-title>
+                    <mat-card-title>{{inscripcion.alumno}}</mat-card-title>
+                    <mat-card-subtitle>{{inscripcion.curso}}</mat-card-subtitle>
                 </mat-card-header>
-                <img src="{{alumno.foto}}" alt="" class="card-imagen">
                 <mat-card-content>
-                    <mat-card-subtitle>Edad: {{alumno.edad}}</mat-card-subtitle>
-                    <mat-card-subtitle>País: {{alumno.pais}}</mat-card-subtitle>
+
                 </mat-card-content>
                 <mat-card-actions>
                     <ng-container *ngIf="sesion$ | async as sesion">
-                        <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary" (click)="abrirDialog(alumno)">
+                        <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-raised-button color="primary" (click)="abrirDialog(inscripcion)">
                             Editar
                         </button>
-                        <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-button color="warn" (click)="eliminaralumno(alumno)">
+                        <button *ngIf="sesion.usuarioActivo?.esAdmin" mat-button color="warn" (click)="EliminarInscripcion(inscripcion)">
                             Eliminar  
                         </button>
                     </ng-container>
+                    
                 </mat-card-actions>
             </mat-card>
         </div>

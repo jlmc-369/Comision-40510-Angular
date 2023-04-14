@@ -36,8 +36,6 @@ export class AgregarCursoComponent implements OnInit{
   }
 
   agregarCurso(){
-    console.log("antes:",this.formulario.value.comision);
-    
     let curso: Curso = {
       id: '',
       nombre: this.formulario.value.nombre,
@@ -48,13 +46,10 @@ export class AgregarCursoComponent implements OnInit{
       profesor: this.formulario.value.profesor.nombre,
       foto: 'https://nimapinfotech.com/wp-content/uploads/2023/01/como-comecar-com-angular.png',
     }
-    ///console.log("durante:",this.formulario.value.comision);
     this.cursoService.agregarCurso(curso).subscribe((curso: Curso) => {
       alert(`${curso.nombre} agregado correctamente`);
       this.router.navigate(['cursos/listar'])
     });
-    ///console.log("despues:",this.formulario.value.comision);
-    ///console.log("CURSO: ", curso);
   }
 
 }

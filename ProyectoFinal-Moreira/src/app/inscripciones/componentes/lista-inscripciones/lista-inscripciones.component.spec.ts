@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListaCursosComponent } from './lista-cursos.component';
+import { ListaInscripcionesComponent } from './lista-inscripciones.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-describe('ListaCursosComponent', () => {
-  let component: ListaCursosComponent;
-  let fixture: ComponentFixture<ListaCursosComponent>;
+describe('ListaInscripcionesComponent', () => {
+  let component: ListaInscripcionesComponent;
+  let fixture: ComponentFixture<ListaInscripcionesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaCursosComponent ],
+      declarations: [ ListaInscripcionesComponent ],
       imports:[
         ReactiveFormsModule
       ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListaCursosComponent);
+    fixture = TestBed.createComponent(ListaInscripcionesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

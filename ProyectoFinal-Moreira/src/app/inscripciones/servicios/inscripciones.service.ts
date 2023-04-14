@@ -1,19 +1,19 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
-import { Curso } from 'src/app/modelos/curso';
+import { Inscripcion } from 'src/app/modelos/inscripcion';
 import { env } from 'src/environment/environment';
 
 @Injectable()
-export class CursosService {
+export class InscripcionesService {
 
 
   constructor(
     private http: HttpClient 
   ){  }
 
-  obtenerCurso(): Observable<Curso[]>{
-    return this.http.get<Curso[]>(`${env.apiURL}/cursos`, {
+  obtenerInscripcion(): Observable<Inscripcion[]>{
+    return this.http.get<Inscripcion[]>(`${env.apiURL2}/inscripciones`, {
       headers: new HttpHeaders({
         'content-type': 'application/json',
         'enconding': 'UTF-8',
@@ -24,20 +24,20 @@ export class CursosService {
     );
   }
   
-  agregarCurso(curso: Curso): Observable<Curso>{
-    return this.http.post<Curso>(`${env.apiURL}/cursos`, curso).pipe(
+  agregarInscripcion(inscripcion: Inscripcion): Observable<Inscripcion>{
+    return this.http.post<Inscripcion>(`${env.apiURL2}/inscripciones`, inscripcion).pipe(
       catchError(this.capturarError)
     );
   }
 
-  editarCurso(curso: Curso): Observable<Curso>{
-    return this.http.put<Curso>(`${env.apiURL}/cursos/${curso.id}`, curso).pipe(
+  editarInscripcion(inscripcion: Inscripcion): Observable<Inscripcion>{
+    return this.http.put<Inscripcion>(`${env.apiURL2}/inscripciones/${inscripcion.id}`, inscripcion).pipe(
       catchError(this.capturarError)
     );
   }
 
-  eliminarCurso(curso: Curso): Observable<Curso>{
-    return this.http.delete<Curso>(`${env.apiURL}/cursos/${curso.id}`).pipe(
+  eliminarInscripcion(inscripcion: Inscripcion): Observable<Inscripcion>{
+    return this.http.delete<Inscripcion>(`${env.apiURL2}/inscripciones/${inscripcion.id}`).pipe(
       catchError(this.capturarError)
     );
   }
@@ -49,6 +49,6 @@ export class CursosService {
       alert(`Error desde el lado del servidor: ${error.message}`);
     }
 
-    return throwError(() => new Error("Error en el procesamiento de CURSOS"));
+    return throwError(() => new Error("Error en el procesamiento de inscripciones"));
   }
 }

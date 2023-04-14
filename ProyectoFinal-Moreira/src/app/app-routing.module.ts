@@ -17,6 +17,11 @@ const routes: Routes = [
     canLoad: [SesionGuard]
   },
   {
+    path: 'inscripciones',
+    loadChildren: () => import('./inscripciones/inscripciones.module').then((modulo) => modulo.InscripcionesModule),
+    canLoad: [SesionGuard]
+  },
+  {
     path: 'auth',
     loadChildren:()=>import('./autentificacion/autentificacion.module').then((modulo)=>modulo.AutentificacionModule)
   },
