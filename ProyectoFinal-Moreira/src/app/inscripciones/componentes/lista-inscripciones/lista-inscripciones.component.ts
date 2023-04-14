@@ -24,7 +24,6 @@ export class ListaInscripcionesComponent implements OnInit {
     private sesion: SesionService,
     private dialog: MatDialog
   ){
-  //console.log("datos de desde LISTAinscripciones", inscripcioneservice.obtenerinscripciones());
  }
 
  ngOnInit() {

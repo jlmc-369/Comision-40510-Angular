@@ -27,8 +27,6 @@ export class AgregarAlumnoComponent implements OnInit{
   }
 
   agregarAlumno(){
-    console.log("antes:",this.formulario.value.comision);
-    
     let alumno: Alumno = {
       id: '',
       nombre: this.formulario.value.nombre,
@@ -36,13 +34,10 @@ export class AgregarAlumnoComponent implements OnInit{
       pais: this.formulario.value.edad,
       foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRvnCAL58JHR2UOR_kIDLd0YICJKqBVMtIjeTfJ6nUk7iZhrVuVGaB90bsmsJ04gRvLAk&usqp=CAU"
     }
-    ///console.log("durante:",this.formulario.value.comision);
     this.AlumnoService.agregaralumno(alumno).subscribe((alumno: Alumno) => {
       alert(`${alumno.nombre} agregado correctamente`);
       this.router.navigate(['alumnos/listar'])
     });
-    ///console.log("despues:",this.formulario.value.comision);
-    ///console.log("alumno: ", alumno);
   }
 
 }

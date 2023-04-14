@@ -17,7 +17,6 @@ export class TablaAlumnosComponent implements OnInit, OnDestroy {
   constructor(
     private AlumnoService: AlumnosService
    ){
-    ///console.log("datos de desde TABLAalumnoS", alumnoService.obteneralumnos());
    }
 
    ngOnInit(): void {

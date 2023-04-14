@@ -23,8 +23,7 @@ export class NavbarComponent implements OnInit {
   }
 
   prueba(){
-    console.log("DATOS: ", this.sesion$);
-    
+//////////////////    
   }
 
   deshabilitado() {

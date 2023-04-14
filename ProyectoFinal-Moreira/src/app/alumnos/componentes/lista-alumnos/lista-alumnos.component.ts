@@ -24,7 +24,6 @@ export class ListaAlumnosComponent implements OnInit {
     private sesion: SesionService,
     private dialog: MatDialog
   ){
-  //console.log("datos de desde LISTAalumnoS", alumnoService.obteneralumnos());
  }
 
  ngOnInit() {

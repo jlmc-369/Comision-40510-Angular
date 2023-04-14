@@ -17,7 +17,6 @@ export class SesionService {
   }
 
   crearSesion(sesion: Sesion){
-    console.log("se creó la sesion: ", sesion);
     this.sesion$.next(sesion);
   }
 

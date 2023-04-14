@@ -44,15 +44,12 @@ ngOnInit(): void {
     })
 }
 
-EditarInscripcion(){
-  console.log("antes:",this.formulario.value.comision);
-  
+EditarInscripcion(){  
   let inscripcion: Inscripcion = {
     id: this.inscripcion.id,
     alumno: this.formulario.value.alumno,
     curso: this.formulario.value.curso
   }
-  ///console.log("durante:",this.formulario.value.comision);
   this.InscripcioneService.editarInscripcion(inscripcion).subscribe((inscripcion: Inscripcion) => {
     this.dialogoRef.close(inscripcion);
   });

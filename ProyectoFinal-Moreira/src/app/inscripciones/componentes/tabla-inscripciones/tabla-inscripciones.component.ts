@@ -17,7 +17,6 @@ export class TablaInscripcionesComponent implements OnInit, OnDestroy {
   constructor(
     private InscripcioneService: InscripcionesService
    ){
-    ///console.log("datos de desde TABLAinscripciones", inscripcioneservice.obtenerinscripciones());
    }
 
    ngOnInit(): void {

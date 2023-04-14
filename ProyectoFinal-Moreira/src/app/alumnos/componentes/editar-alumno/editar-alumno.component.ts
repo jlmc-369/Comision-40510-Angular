@@ -35,9 +35,7 @@ ngOnInit(): void {
     })
 }
 
-editarAlumno(){
-  console.log("antes:",this.formulario.value.comision);
-  
+editarAlumno(){  
   let alumno: Alumno = {
     id: this.alumno.id,
     nombre: this.formulario.value.nombre,
@@ -45,12 +43,8 @@ editarAlumno(){
     pais: this.formulario.value.pais,
     foto: this.formulario.value.foto
   }
-  ///console.log("durante:",this.formulario.value.comision);
   this.AlumnoService.editaralumno(alumno).subscribe((alumno: Alumno) => {
     this.dialogoRef.close(alumno);
   });
-  
-  ///console.log("despues:",this.formulario.value.comision);
-  ///this.router.navigate(['alumnos/listar'])
 }
 }
