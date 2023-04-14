@@ -2,8 +2,8 @@
   display: grid;
   grid-template-areas:
   'header header  header  header'
-  'menu   main1    main1    main2';
-  margin: 30px;
+  'menu   main1    main1    main1';
+
   background-color: #f8f9fa;
 }
 
@@ -20,15 +20,7 @@
 
 }
 
-.contenedor-abmAlumnos{
-  grid-area: main2-11;
-  margin-bottom: 50px;    
-}
-
-.contenedor-listaAlumnos{
-  grid-area: main111;
-}
-
 .contenido{
-  grid-area: main2;
+  grid-area: main1;
+
 }

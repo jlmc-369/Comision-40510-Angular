@@ -1,0 +1,16 @@
+.valido{
+    color: #40d440;
+}
+
+.novalido{
+    color: rgb(241, 24, 24);
+}
+
+.formularioRegistro{
+    margin: 2em 5em 2em 5em;   
+}
+
+.form-label{
+    font-size: medium;
+    font-weight:bold;
+}
