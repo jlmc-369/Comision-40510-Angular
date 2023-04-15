@@ -1,11 +1,27 @@
 <div class="login">
-    <form [formGroup]="formulario" (ngSubmit)="login()" class="custom-form">
-        <h1>Login</h1><mat-icon>assignment_ind</mat-icon>
-        <input matInput type="text" formControlName="usuario" required="required" placeholder="Usuario" >
-        <input matInput type="text" formControlName="contrasena" required="required" placeholder="Contraseña">
-        <mat-slide-toggle formControlName="esAdmin">Usuario Administrador</mat-slide-toggle>
+    <form [formGroup]="formulario" (ngSubmit)="login2()" class="custom-form">
+      
+        <h1 class="txth1"> <mat-icon  class="icon-display" > assignment_ind </mat-icon>  Login  </h1>
+        <input matInput type="text" formControlName="usuario" required="required" placeholder="Usuario" id="usuario" name="usuario" [(ngModel)]="usuario">
+        <input matInput type="text" formControlName="contrasena" required="required" placeholder="Contraseña" id="contrasena" name="contrasena" [(ngModel)]="contrasena">
+        <!-- <mat-slide-toggle formControlName="esAdmin">Usuario Administrador</mat-slide-toggle> -->
         <button type="submit" >Login</button>
-    </form>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>NOTA PARA EL PROFE:</mat-card-title>
+            <mat-card-subtitle>Ya está el logeo con Mokapi</mat-card-subtitle>
+          <mat-card-subtitle>https://6439b88990cd4ba563eccd4a.mockapi.io/usuarios</mat-card-subtitle>
+          </mat-card-header><br>
+          <mat-card-content><br>
+            <p>ADMIN: admin / admin</p>
+            <p>NO ADMIN: usu / usu</p>
+            <mat-divider></mat-divider>
+          </mat-card-content>
+          <mat-card-footer>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </mat-card-footer>
+        </mat-card> 
+      </form> 
 </div>
 <!-- <div class="row align-items-center justify-content-center">
     <div class="col-12 ">

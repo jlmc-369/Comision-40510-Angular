@@ -31,7 +31,7 @@ export class AgregarAlumnoComponent implements OnInit{
       id: '',
       nombre: this.formulario.value.nombre,
       edad: this.formulario.value.edad,
-      pais: this.formulario.value.edad,
+      pais: this.formulario.value.pais,
       foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRvnCAL58JHR2UOR_kIDLd0YICJKqBVMtIjeTfJ6nUk7iZhrVuVGaB90bsmsJ04gRvLAk&usqp=CAU"
     }
     this.AlumnoService.agregaralumno(alumno).subscribe((alumno: Alumno) => {

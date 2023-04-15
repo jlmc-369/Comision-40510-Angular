@@ -12,7 +12,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatExpansionModule } from '@angular/material/expansion'; 
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressBarModule } from '@angular/material/progress-bar'; 
 
 @NgModule({
   declarations: [],
@@ -29,7 +31,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatNativeDateModule,
     MatSelectModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDividerModule,
+    MatProgressBarModule
   ],
   exports:[
     MatCardModule,
@@ -44,7 +48,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatNativeDateModule,
     MatSelectModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDividerModule,
+    MatProgressBarModule
   ]
 })
 export class MaterialModule { }
